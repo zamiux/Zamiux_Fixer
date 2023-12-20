@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33815.320
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZamiuxFixer.WEB", "ZamiuxFixer.WEB\ZamiuxFixer.WEB.csproj", "{9D6577BB-68CF-47E1-9081-AB614A0E1DF8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZamiuxFixer.DataLayer", "ZamiuxFixer.DataLayer\ZamiuxFixer.DataLayer.csproj", "{016169C7-D2BC-41BF-A408-DA5091F08805}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{50E0CD2C-0A29-41F9-A7A7-E5B13D44F678}"
+	ProjectSection(SolutionItems) = preProject
+		MeGuide.txt = MeGuide.txt
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZamiuxFixer.Application", "ZamiuxFixer.Application\ZamiuxFixer.Application.csproj", "{D72C2703-8EC0-49DD-B82B-3A7CAA000300}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZamiuxFixer.IOC", "ZamiuxFixer.IOC\ZamiuxFixer.IOC.csproj", "{80062196-8D2F-42B4-89B7-617C13F1CF5F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZamiuxFixer.Domain", "ZamiuxFixer.Domain\ZamiuxFixer.Domain.csproj", "{C6824D64-D733-46CA-B73A-A2170ED26317}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9D6577BB-68CF-47E1-9081-AB614A0E1DF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D6577BB-68CF-47E1-9081-AB614A0E1DF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D6577BB-68CF-47E1-9081-AB614A0E1DF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D6577BB-68CF-47E1-9081-AB614A0E1DF8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{016169C7-D2BC-41BF-A408-DA5091F08805}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{016169C7-D2BC-41BF-A408-DA5091F08805}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{016169C7-D2BC-41BF-A408-DA5091F08805}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{016169C7-D2BC-41BF-A408-DA5091F08805}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D72C2703-8EC0-49DD-B82B-3A7CAA000300}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D72C2703-8EC0-49DD-B82B-3A7CAA000300}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D72C2703-8EC0-49DD-B82B-3A7CAA000300}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D72C2703-8EC0-49DD-B82B-3A7CAA000300}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80062196-8D2F-42B4-89B7-617C13F1CF5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80062196-8D2F-42B4-89B7-617C13F1CF5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80062196-8D2F-42B4-89B7-617C13F1CF5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80062196-8D2F-42B4-89B7-617C13F1CF5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6824D64-D733-46CA-B73A-A2170ED26317}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6824D64-D733-46CA-B73A-A2170ED26317}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6824D64-D733-46CA-B73A-A2170ED26317}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6824D64-D733-46CA-B73A-A2170ED26317}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F92BF4D3-9000-4CBA-89F1-FD574263DB39}
+	EndGlobalSection
+EndGlobal

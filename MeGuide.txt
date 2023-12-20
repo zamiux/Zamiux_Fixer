@@ -1,0 +1,5 @@
+ZamiuxFixer.Web : Core MVC -> for Web Structure
+ZamiuxFixer.Data : Class library -> for Data and Connection DB,Context and Repository
+ZamiuxFixer.Application : Class library -> For Logic and Apps , Servics and Tools
+ZamiuxFixer.IOC : Class library -> Inversion Of Controll -> Tazrigh Vabastegi
+ZamiuxFixer.Domain : Class library -> For DB Models,Entity and Base Entity  
