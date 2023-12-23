@@ -1,0 +1,17 @@
+D:\Projects\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer.DataLayer\bin\Debug\net7.0\ZamiuxFixer.DataLayer.deps.json
+D:\Projects\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer.DataLayer\bin\Debug\net7.0\ZamiuxFixer.DataLayer.runtimeconfig.json
+D:\Projects\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer.DataLayer\bin\Debug\net7.0\ZamiuxFixer.DataLayer.dll
+D:\Projects\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer.DataLayer\bin\Debug\net7.0\ZamiuxFixer.DataLayer.pdb
+D:\Projects\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer.DataLayer\bin\Debug\net7.0\ZamiuxFixer.Domain.dll
+D:\Projects\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer.DataLayer\bin\Debug\net7.0\ZamiuxFixer.Domain.pdb
+D:\Projects\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer.DataLayer\obj\Debug\net7.0\ZamiuxFixer.DataLayer.csproj.AssemblyReference.cache
+D:\Projects\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer.DataLayer\obj\Debug\net7.0\ZamiuxFixer.DataLayer.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer.DataLayer\obj\Debug\net7.0\ZamiuxFixer.DataLayer.AssemblyInfoInputs.cache
+D:\Projects\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer.DataLayer\obj\Debug\net7.0\ZamiuxFixer.DataLayer.AssemblyInfo.cs
+D:\Projects\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer.DataLayer\obj\Debug\net7.0\ZamiuxFixer.DataLayer.csproj.CoreCompileInputs.cache
+D:\Projects\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer.DataLayer\obj\Debug\net7.0\ZamiuxFixer.DataLayer.csproj.CopyComplete
+D:\Projects\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer.DataLayer\obj\Debug\net7.0\ZamiuxFixer.DataLayer.dll
+D:\Projects\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer.DataLayer\obj\Debug\net7.0\refint\ZamiuxFixer.DataLayer.dll
+D:\Projects\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer.DataLayer\obj\Debug\net7.0\ZamiuxFixer.DataLayer.pdb
+D:\Projects\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer.DataLayer\obj\Debug\net7.0\ZamiuxFixer.DataLayer.genruntimeconfig.cache
+D:\Projects\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer.DataLayer\obj\Debug\net7.0\ref\ZamiuxFixer.DataLayer.dll

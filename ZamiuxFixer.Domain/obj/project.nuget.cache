@@ -1,8 +1,20 @@
 {
   "version": 2,
-  "dgSpecHash": "4IR4PxxKnar9TQqF6Vp06+ebSY/pqWbOk8mw4swJAEDW4MMxTyVinC3SMZGk8TSbQVykcpD33QR3vkLTNwXBTg==",
+  "dgSpecHash": "8wMGom+m2/N4/FjN2UdCdl82thrkG2Jtg3DqnFly/ccpw5/qP2cR124BDjr7og0gzjSuoQXCIOwoFYL8BFTW3Q==",
   "success": true,
-  "projectFilePath": "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.Domain\\ZamiuxFixer.Domain.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.Domain\\ZamiuxFixer.Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\m.zamani\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.14\\microsoft.entityframeworkcore.7.0.14.nupkg.sha512",
+    "C:\\Users\\m.zamani\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\7.0.14\\microsoft.entityframeworkcore.abstractions.7.0.14.nupkg.sha512",
+    "C:\\Users\\m.zamani\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\7.0.14\\microsoft.entityframeworkcore.analyzers.7.0.14.nupkg.sha512",
+    "C:\\Users\\m.zamani\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\7.0.0\\microsoft.extensions.caching.abstractions.7.0.0.nupkg.sha512",
+    "C:\\Users\\m.zamani\\.nuget\\packages\\microsoft.extensions.caching.memory\\7.0.0\\microsoft.extensions.caching.memory.7.0.0.nupkg.sha512",
+    "C:\\Users\\m.zamani\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\7.0.0\\microsoft.extensions.dependencyinjection.7.0.0.nupkg.sha512",
+    "C:\\Users\\m.zamani\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\7.0.0\\microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512",
+    "C:\\Users\\m.zamani\\.nuget\\packages\\microsoft.extensions.logging\\7.0.0\\microsoft.extensions.logging.7.0.0.nupkg.sha512",
+    "C:\\Users\\m.zamani\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\7.0.0\\microsoft.extensions.logging.abstractions.7.0.0.nupkg.sha512",
+    "C:\\Users\\m.zamani\\.nuget\\packages\\microsoft.extensions.options\\7.0.0\\microsoft.extensions.options.7.0.0.nupkg.sha512",
+    "C:\\Users\\m.zamani\\.nuget\\packages\\microsoft.extensions.primitives\\7.0.0\\microsoft.extensions.primitives.7.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

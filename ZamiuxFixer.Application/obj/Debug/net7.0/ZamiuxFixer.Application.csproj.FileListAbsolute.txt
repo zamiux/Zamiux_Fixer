@@ -1,0 +1,12 @@
+D:\Projects\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer.Application\bin\Debug\net7.0\ZamiuxFixer.Application.deps.json
+D:\Projects\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer.Application\bin\Debug\net7.0\ZamiuxFixer.Application.dll
+D:\Projects\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer.Application\bin\Debug\net7.0\ZamiuxFixer.Application.pdb
+D:\Projects\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer.Application\obj\Debug\net7.0\ZamiuxFixer.Application.csproj.AssemblyReference.cache
+D:\Projects\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer.Application\obj\Debug\net7.0\ZamiuxFixer.Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer.Application\obj\Debug\net7.0\ZamiuxFixer.Application.AssemblyInfoInputs.cache
+D:\Projects\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer.Application\obj\Debug\net7.0\ZamiuxFixer.Application.AssemblyInfo.cs
+D:\Projects\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer.Application\obj\Debug\net7.0\ZamiuxFixer.Application.csproj.CoreCompileInputs.cache
+D:\Projects\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer.Application\obj\Debug\net7.0\ZamiuxFixer.Application.dll
+D:\Projects\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer.Application\obj\Debug\net7.0\refint\ZamiuxFixer.Application.dll
+D:\Projects\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer.Application\obj\Debug\net7.0\ZamiuxFixer.Application.pdb
+D:\Projects\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer.Application\obj\Debug\net7.0\ref\ZamiuxFixer.Application.dll

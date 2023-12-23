@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.WEB\\ZamiuxFixer.WEB.csproj": {}
+    "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.WEB\\ZamiuxFixer.WEB.csproj": {}
   },
   "projects": {
-    "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.WEB\\ZamiuxFixer.WEB.csproj": {
+    "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.WEB\\ZamiuxFixer.WEB.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.WEB\\ZamiuxFixer.WEB.csproj",
+        "projectUniqueName": "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.WEB\\ZamiuxFixer.WEB.csproj",
         "projectName": "ZamiuxFixer.WEB",
-        "projectPath": "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.WEB\\ZamiuxFixer.WEB.csproj",
+        "projectPath": "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.WEB\\ZamiuxFixer.WEB.csproj",
         "packagesPath": "C:\\Users\\m.zamani\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.WEB\\obj\\",
+        "outputPath": "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.WEB\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

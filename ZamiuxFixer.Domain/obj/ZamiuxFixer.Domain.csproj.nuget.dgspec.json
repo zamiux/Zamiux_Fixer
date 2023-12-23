@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.Domain\\ZamiuxFixer.Domain.csproj": {}
+    "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.Domain\\ZamiuxFixer.Domain.csproj": {}
   },
   "projects": {
-    "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.Domain\\ZamiuxFixer.Domain.csproj": {
+    "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.Domain\\ZamiuxFixer.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.Domain\\ZamiuxFixer.Domain.csproj",
+        "projectUniqueName": "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.Domain\\ZamiuxFixer.Domain.csproj",
         "projectName": "ZamiuxFixer.Domain",
-        "projectPath": "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.Domain\\ZamiuxFixer.Domain.csproj",
+        "projectPath": "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.Domain\\ZamiuxFixer.Domain.csproj",
         "packagesPath": "C:\\Users\\m.zamani\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.Domain\\obj\\",
+        "outputPath": "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -45,6 +45,12 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.14, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
