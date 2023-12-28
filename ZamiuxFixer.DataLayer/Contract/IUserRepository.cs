@@ -1,15 +1,14 @@
-﻿using ZamiuxFixer.Domain.Users;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using ZamiuxFixer.Domain.Users;
 
 namespace ZamiuxFixer.DataLayer.Contract
 {
-    public interface IUserRepository
+    public interface IUserRepository : IGenericRepository<User>
     {
-        // CRUD User Constracts
-        List<User> GetAllUser();
-        User GetUserById(int id);
-        void AddUser(User user);
-        void UpdateUser(User user);
-        void DelteUser(User user);
-        void Save();
+       // bool isExistUserByEmail(string email); 
     }
 }

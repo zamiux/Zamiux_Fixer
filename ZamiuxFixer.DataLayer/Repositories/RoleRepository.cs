@@ -9,44 +9,15 @@ using ZamiuxFixer.Domain.Users;
 namespace ZamiuxFixer.DataLayer.Repositories
 {
     
-    public class RoleRepository : IRoleRepository
+    public class RoleRepository : GenericRepository<Role>,IRoleRepository
     {
         #region Constructor
         private readonly ZamiuxFixerDbContext _context;
-        public RoleRepository(ZamiuxFixerDbContext context)
+        public RoleRepository(ZamiuxFixerDbContext context):base(context) 
         {
             _context = context;
         }
         #endregion
 
-        public void AddRole(Role role)
-        {
-            _context.Roles.Add(role);
-        }
-
-        public void DelteRole(Role role)
-        {
-            _context.Roles.Remove(role);
-        }
-
-        public List<Role> GetAllRoles()
-        {
-            return _context.Roles.Where(r=>r.IsDelete == false).ToList();
-        }
-
-        public Role GetRoleById(int id)
-        {
-            return _context.Roles.Find(id);
-        }
-
-        public void Save()
-        {
-            _context.SaveChanges();
-        }
-
-        public void UpdateRole(Role role)
-        {
-            _context.Update(role);
-        }
     }
 }

@@ -1,7 +1,15 @@
+using ZamiuxFixer.DataLayer.Contract;
+using ZamiuxFixer.DataLayer.Repositories;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+#region Add Service Repository From Data Layer
+builder.Services.AddScoped<IRoleRepository, RoleRepository>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+#endregion
 
 var app = builder.Build();
 
