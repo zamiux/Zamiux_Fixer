@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using ZamiuxFixer.DataLayer;
+using ZamiuxFixer.DataLayer.Context;
 using ZamiuxFixer.DataLayer.Contract;
 using ZamiuxFixer.DataLayer.Repositories;
 
@@ -5,6 +8,13 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+#region Context Connection
+builder.Services.AddDbContext<ZamiuxFixerDbContext>(options =>
+{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("ZamiuxFixerConnection"));
+});
+#endregion
 
 #region Add Service Repository From Data Layer
 builder.Services.AddScoped<IRoleRepository, RoleRepository>();

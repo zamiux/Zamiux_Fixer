@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ZamiuxFixer.DataLayer.Context;
 using ZamiuxFixer.DataLayer.Contract;
 using ZamiuxFixer.Domain.Users;
 
@@ -16,7 +17,14 @@ namespace ZamiuxFixer.DataLayer.Repositories
         {
             _context = context;
         }
+
+
         #endregion
+
+        public bool isExistUserByEmail(string email)
+        {
+            return _context.Users.Any(u => u.Email == email);
+        }
 
 
 

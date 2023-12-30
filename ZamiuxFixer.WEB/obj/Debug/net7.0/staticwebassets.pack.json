@@ -5,16 +5,260 @@
       "PackagePath": "staticwebassets\\ZamiuxFixer.WEB.bundle.scp.css"
     },
     {
-      "Id": "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.WEB\\wwwroot\\css\\site.css",
-      "PackagePath": "staticwebassets\\css\\site.css"
+      "Id": "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.WEB\\wwwroot\\Font package\\bugfixer.css",
+      "PackagePath": "staticwebassets\\Font package\\bugfixer.css"
+    },
+    {
+      "Id": "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.WEB\\wwwroot\\Font package\\bugfixer.html",
+      "PackagePath": "staticwebassets\\Font package\\bugfixer.html"
+    },
+    {
+      "Id": "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.WEB\\wwwroot\\Font package\\fonts\\IRANSansWeb(FaNum).eot",
+      "PackagePath": "staticwebassets\\Font package\\fonts\\IRANSansWeb(FaNum).eot"
+    },
+    {
+      "Id": "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.WEB\\wwwroot\\Font package\\fonts\\IRANSansWeb(FaNum).ttf",
+      "PackagePath": "staticwebassets\\Font package\\fonts\\IRANSansWeb(FaNum).ttf"
+    },
+    {
+      "Id": "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.WEB\\wwwroot\\Font package\\fonts\\IRANSansWeb(FaNum).woff",
+      "PackagePath": "staticwebassets\\Font package\\fonts\\IRANSansWeb(FaNum).woff"
+    },
+    {
+      "Id": "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.WEB\\wwwroot\\Font package\\fonts\\IRANSansWeb(FaNum).woff2",
+      "PackagePath": "staticwebassets\\Font package\\fonts\\IRANSansWeb(FaNum).woff2"
+    },
+    {
+      "Id": "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.WEB\\wwwroot\\Font package\\fonts\\IRANSansWeb.eot",
+      "PackagePath": "staticwebassets\\Font package\\fonts\\IRANSansWeb.eot"
+    },
+    {
+      "Id": "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.WEB\\wwwroot\\Font package\\fonts\\IRANSansWeb.ttf",
+      "PackagePath": "staticwebassets\\Font package\\fonts\\IRANSansWeb.ttf"
+    },
+    {
+      "Id": "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.WEB\\wwwroot\\Font package\\fonts\\IRANSansWeb.woff",
+      "PackagePath": "staticwebassets\\Font package\\fonts\\IRANSansWeb.woff"
+    },
+    {
+      "Id": "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.WEB\\wwwroot\\Font package\\fonts\\IRANSansWeb.woff2",
+      "PackagePath": "staticwebassets\\Font package\\fonts\\IRANSansWeb.woff2"
+    },
+    {
+      "Id": "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.WEB\\wwwroot\\Font package\\fonts\\bugfixer.eot",
+      "PackagePath": "staticwebassets\\Font package\\fonts\\bugfixer.eot"
+    },
+    {
+      "Id": "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.WEB\\wwwroot\\Font package\\fonts\\bugfixer.svg",
+      "PackagePath": "staticwebassets\\Font package\\fonts\\bugfixer.svg"
+    },
+    {
+      "Id": "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.WEB\\wwwroot\\Font package\\fonts\\bugfixer.ttf",
+      "PackagePath": "staticwebassets\\Font package\\fonts\\bugfixer.ttf"
+    },
+    {
+      "Id": "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.WEB\\wwwroot\\Font package\\fonts\\bugfixer.woff",
+      "PackagePath": "staticwebassets\\Font package\\fonts\\bugfixer.woff"
+    },
+    {
+      "Id": "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.WEB\\wwwroot\\css\\account.css",
+      "PackagePath": "staticwebassets\\css\\account.css"
+    },
+    {
+      "Id": "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.WEB\\wwwroot\\css\\bootstrap-rtl.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap-rtl.min.css"
+    },
+    {
+      "Id": "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.WEB\\wwwroot\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.WEB\\wwwroot\\css\\bugfixer.css",
+      "PackagePath": "staticwebassets\\css\\bugfixer.css"
+    },
+    {
+      "Id": "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.WEB\\wwwroot\\css\\faq.css",
+      "PackagePath": "staticwebassets\\css\\faq.css"
+    },
+    {
+      "Id": "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.WEB\\wwwroot\\css\\fonts\\IRANSansWeb(FaNum).eot",
+      "PackagePath": "staticwebassets\\css\\fonts\\IRANSansWeb(FaNum).eot"
+    },
+    {
+      "Id": "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.WEB\\wwwroot\\css\\fonts\\IRANSansWeb(FaNum).ttf",
+      "PackagePath": "staticwebassets\\css\\fonts\\IRANSansWeb(FaNum).ttf"
+    },
+    {
+      "Id": "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.WEB\\wwwroot\\css\\fonts\\IRANSansWeb(FaNum).woff",
+      "PackagePath": "staticwebassets\\css\\fonts\\IRANSansWeb(FaNum).woff"
+    },
+    {
+      "Id": "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.WEB\\wwwroot\\css\\fonts\\IRANSansWeb(FaNum).woff2",
+      "PackagePath": "staticwebassets\\css\\fonts\\IRANSansWeb(FaNum).woff2"
+    },
+    {
+      "Id": "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.WEB\\wwwroot\\css\\fonts\\IRANSansWeb.eot",
+      "PackagePath": "staticwebassets\\css\\fonts\\IRANSansWeb.eot"
+    },
+    {
+      "Id": "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.WEB\\wwwroot\\css\\fonts\\IRANSansWeb.ttf",
+      "PackagePath": "staticwebassets\\css\\fonts\\IRANSansWeb.ttf"
+    },
+    {
+      "Id": "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.WEB\\wwwroot\\css\\fonts\\IRANSansWeb.woff",
+      "PackagePath": "staticwebassets\\css\\fonts\\IRANSansWeb.woff"
+    },
+    {
+      "Id": "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.WEB\\wwwroot\\css\\fonts\\IRANSansWeb.woff2",
+      "PackagePath": "staticwebassets\\css\\fonts\\IRANSansWeb.woff2"
+    },
+    {
+      "Id": "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.WEB\\wwwroot\\css\\fonts\\bugfixer.eot",
+      "PackagePath": "staticwebassets\\css\\fonts\\bugfixer.eot"
+    },
+    {
+      "Id": "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.WEB\\wwwroot\\css\\fonts\\bugfixer.svg",
+      "PackagePath": "staticwebassets\\css\\fonts\\bugfixer.svg"
+    },
+    {
+      "Id": "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.WEB\\wwwroot\\css\\fonts\\bugfixer.ttf",
+      "PackagePath": "staticwebassets\\css\\fonts\\bugfixer.ttf"
+    },
+    {
+      "Id": "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.WEB\\wwwroot\\css\\fonts\\bugfixer.woff",
+      "PackagePath": "staticwebassets\\css\\fonts\\bugfixer.woff"
+    },
+    {
+      "Id": "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.WEB\\wwwroot\\css\\form.css",
+      "PackagePath": "staticwebassets\\css\\form.css"
+    },
+    {
+      "Id": "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.WEB\\wwwroot\\css\\home.css",
+      "PackagePath": "staticwebassets\\css\\home.css"
+    },
+    {
+      "Id": "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.WEB\\wwwroot\\css\\page.css",
+      "PackagePath": "staticwebassets\\css\\page.css"
+    },
+    {
+      "Id": "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.WEB\\wwwroot\\css\\public.css",
+      "PackagePath": "staticwebassets\\css\\public.css"
+    },
+    {
+      "Id": "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.WEB\\wwwroot\\css\\question.css",
+      "PackagePath": "staticwebassets\\css\\question.css"
+    },
+    {
+      "Id": "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.WEB\\wwwroot\\css\\tags.css",
+      "PackagePath": "staticwebassets\\css\\tags.css"
+    },
+    {
+      "Id": "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.WEB\\wwwroot\\css\\user.css",
+      "PackagePath": "staticwebassets\\css\\user.css"
     },
     {
       "Id": "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.WEB\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.WEB\\wwwroot\\js\\site.js",
-      "PackagePath": "staticwebassets\\js\\site.js"
+      "Id": "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.WEB\\wwwroot\\images\\404.svg",
+      "PackagePath": "staticwebassets\\images\\404.svg"
+    },
+    {
+      "Id": "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.WEB\\wwwroot\\images\\banner-2.jpg",
+      "PackagePath": "staticwebassets\\images\\banner-2.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.WEB\\wwwroot\\images\\banner-4.jpg",
+      "PackagePath": "staticwebassets\\images\\banner-4.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.WEB\\wwwroot\\images\\banner.jpg",
+      "PackagePath": "staticwebassets\\images\\banner.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.WEB\\wwwroot\\images\\landing.jpg",
+      "PackagePath": "staticwebassets\\images\\landing.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.WEB\\wwwroot\\images\\logo-dark.svg",
+      "PackagePath": "staticwebassets\\images\\logo-dark.svg"
+    },
+    {
+      "Id": "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.WEB\\wwwroot\\images\\logo.svg",
+      "PackagePath": "staticwebassets\\images\\logo.svg"
+    },
+    {
+      "Id": "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.WEB\\wwwroot\\images\\pic\\2avatar.jpg",
+      "PackagePath": "staticwebassets\\images\\pic\\2avatar.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.WEB\\wwwroot\\images\\pic\\avatar-2.jpg",
+      "PackagePath": "staticwebassets\\images\\pic\\avatar-2.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.WEB\\wwwroot\\images\\pic\\avatar-3.jpg",
+      "PackagePath": "staticwebassets\\images\\pic\\avatar-3.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.WEB\\wwwroot\\images\\pic\\avatar.jpg",
+      "PackagePath": "staticwebassets\\images\\pic\\avatar.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.WEB\\wwwroot\\images\\pic\\thumb.jpg",
+      "PackagePath": "staticwebassets\\images\\pic\\thumb.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.WEB\\wwwroot\\js\\account.js",
+      "PackagePath": "staticwebassets\\js\\account.js"
+    },
+    {
+      "Id": "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.WEB\\wwwroot\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.WEB\\wwwroot\\js\\clipboard.min.js",
+      "PackagePath": "staticwebassets\\js\\clipboard.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.WEB\\wwwroot\\js\\faq.js",
+      "PackagePath": "staticwebassets\\js\\faq.js"
+    },
+    {
+      "Id": "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.WEB\\wwwroot\\js\\home.js",
+      "PackagePath": "staticwebassets\\js\\home.js"
+    },
+    {
+      "Id": "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.WEB\\wwwroot\\js\\jquery.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.WEB\\wwwroot\\js\\modernizr.js",
+      "PackagePath": "staticwebassets\\js\\modernizr.js"
+    },
+    {
+      "Id": "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.WEB\\wwwroot\\js\\page.js",
+      "PackagePath": "staticwebassets\\js\\page.js"
+    },
+    {
+      "Id": "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.WEB\\wwwroot\\js\\progress.js",
+      "PackagePath": "staticwebassets\\js\\progress.js"
+    },
+    {
+      "Id": "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.WEB\\wwwroot\\js\\public.js",
+      "PackagePath": "staticwebassets\\js\\public.js"
+    },
+    {
+      "Id": "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.WEB\\wwwroot\\js\\question.js",
+      "PackagePath": "staticwebassets\\js\\question.js"
+    },
+    {
+      "Id": "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.WEB\\wwwroot\\js\\slimscroll.js",
+      "PackagePath": "staticwebassets\\js\\slimscroll.js"
+    },
+    {
+      "Id": "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.WEB\\wwwroot\\js\\user.js",
+      "PackagePath": "staticwebassets\\js\\user.js"
     },
     {
       "Id": "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.WEB\\wwwroot\\lib\\bootstrap\\LICENSE",
