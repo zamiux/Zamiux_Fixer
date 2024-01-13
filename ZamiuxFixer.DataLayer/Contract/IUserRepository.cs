@@ -9,6 +9,8 @@ namespace ZamiuxFixer.DataLayer.Contract
 {
     public interface IUserRepository : IGenericRepository<User>
     {
-        bool isExistUserByEmail(string email); 
-    }
+        bool isExistUserByEmail(string email);
+        User GetUserByActiveCode(string code);
+        User GetUserByEmail(string Email);
+    } 
 }

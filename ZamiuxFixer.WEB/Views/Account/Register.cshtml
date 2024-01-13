@@ -10,10 +10,10 @@
     <title> باگ فیکسر - @ViewData["Title"] </title>
     <partial name="_HeaderRefrences" />
     <link rel="stylesheet" type="text/css" href="/css/user.css">
-    <script src="js/jquery.min.js"></script>
+    <script src="/js/jquery.min.js"></script>
 </head>
 <body>
-    <script src="js/modernizr.js"></script>
+    <script src="/js/modernizr.js"></script>
 
     <header class="main-header">
         <div class="container">
@@ -26,35 +26,7 @@
                         <li><a href=""> کاربران </a></li>
                         <li><a href=""> راهنمای سایت </a></li>
                     </ul>
-                    <div class="clientarea-layer">
-                        <div class="loggedin-status">
-                            <i class="icon-profile"></i>
-                            <span> حساب کاربری شما  </span>
-                            <div class="sublayer">
-                                <div class="avatar">
-                                    <a href=""><img src="images/pic/avatar.jpg"></a>
-                                    <div>
-                                        <span class="fullname"> ایمان مدائنی </span>
-                                        <span class="detail"> 123 پرسش | 1236 پاسخ </span>
-                                    </div>
-                                </div>
-                                <ul>
-                                    <li><a href=""> مشاهده حساب کاربری </a></li>
-                                    <li><a href=""> تنظیمات حساب کاربری </a></li>
-                                    <li><a href=""> ویرایش حساب کاربری </a></li>
-                                    <li><a href=""> تغییر رمز عبور </a></li>
-                                    <li><a href=""> پرسش های من </a></li>
-                                    <li><a href=""> پاسخ های من </a></li>
-                                    <li><a href=""> خروج از حساب کاربری </a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="signout-status hidden">
-                            <i class="icon-profile"></i>
-                            <a href=""> ورود / </a>
-                            <a href=""> عضویت </a>
-                        </div>
-                    </div>
+                    <partial name="_Nav" />
                 </div>
             </nav>
 
@@ -69,8 +41,8 @@
         <div class="breadcumb-layer">
             <div class="container">
                 <ul itemtype="http://schema.org/BreadcrumbList" class="breadcrumb">
-                    <li itemtype="http://schema.org/ListItem" itemscope itemprop="itemListElement"><a href="" itemprop="item"><span itemprop="name"> گت ورک </span></a></li>
-                    <li itemtype="http://schema.org/ListItem" itemscope itemprop="itemListElement"><a href="" itemprop="item"><span itemprop="name"> ثبت نام در سایت </span></a></li>
+                    <li itemtype="http://schema.org/ListItem" itemscope itemprop="itemListElement"><a href="/" itemprop="item"><span itemprop="name"> باگ فیکسر </span></a></li>
+                    <li itemtype="http://schema.org/ListItem" itemscope itemprop="itemListElement"><a href="/Register" itemprop="item"><span itemprop="name"> ثبت نام در سایت </span></a></li>
                 </ul>
             </div>
         </div>
@@ -94,7 +66,7 @@
                                 </ul>
 
                                 <div class="register-link">
-                                    <i class="icon-login"></i> در صورتی که قبلا ثبت نام کرده اید ،  به حساب کاربری خود <a href=""> وارد شوید </a> .
+                                    <i class="icon-login"></i> در صورتی که قبلا ثبت نام کرده اید ،  به حساب کاربری خود <a href="/Login"> وارد شوید </a> .
                                 </div>
                             </div>
                         </div>
@@ -106,7 +78,25 @@
                         <form asp-area="" asp-controller="Account" asp-action="Register" method="post" class="shadow-style">
 
                             <div class="inner">
+                                @if (ViewBag.SuccessRegister != null)
+                                {
 
+                                    <div class="alert alert-primary">
+                                        @if ((bool)ViewBag.isSendEmail)
+                                        {
+                                            <p class="text-success">ایمیل با موفقیت ارسال شد</p>
+                                        }
+                                        else
+                                        {
+                                            <p class="text-danger">ایمیل ارسال نشد</p>
+                                        }
+
+                                    </div>
+                                    <div class="alert alert-success">
+                                        <h2>@Model.UserName عزیز!</h2>
+                                        <p>باتشکر از ثبت نام شما، ایمیلی حاوی لینک فعالسازی برای شما ارسال شد</p>
+                                    </div>
+                                }
                                 <h2> <i class="icon-three-dots"></i> ثبت نام در سایت </h2>
 
                                 <div class="input-layer">
@@ -123,8 +113,8 @@
                                 </div>
 
                                 @*<div class="input-layer">
-                                    <span><i class="icon-phone-1"></i> موبایل </span>
-                                    <input type="text" name="">
+                                <span><i class="icon-phone-1"></i> موبایل </span>
+                                <input type="text" name="">
                                 </div>*@
 
                                 <div class="input-layer">
@@ -145,11 +135,10 @@
                                     <!-- کد کپچا در این لایه قرار بدید تا استایل بگیره-->
                                 </div>
 
-                                <input class="btn btn-success" type="submit" value="ثبت نام در سایت" /> 
+                                <input class="btn btn-success" type="submit" value="ثبت نام در سایت" />
 
                                 <br /><br />
                                 <div class="text-danger" asp-validation-summary="All">
-                                   
                                 </div>
                             </div>
 

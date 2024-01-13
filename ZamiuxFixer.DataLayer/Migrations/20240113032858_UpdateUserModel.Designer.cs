@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ZamiuxFixer.DataLayer.Context;
 
@@ -11,9 +12,11 @@ using ZamiuxFixer.DataLayer.Context;
 namespace ZamiuxFixer.DataLayer.Migrations
 {
     [DbContext(typeof(ZamiuxFixerDbContext))]
-    partial class ZamiuxFixerDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240113032858_UpdateUserModel")]
+    partial class UpdateUserModel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

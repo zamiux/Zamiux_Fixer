@@ -2,16 +2,29 @@
 using ZamiuxFixer.Application.ViewModels.Account;
 using ZamiuxFixer.DataLayer.Contract;
 using ZamiuxFixer.Domain.Users;
+using ZamiuxFixer.Application.Security;
+using Microsoft.Extensions.Configuration;
+using ZamiuxFixer.Application.SendEmail;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication;
 
 namespace ZamiuxFixer.WEB.Controllers
 {
     public class AccountController : Controller
     {
         private readonly IUserRepository _userRepository;
+        private readonly IConfiguration _configuration;
+        private readonly IMailSender _mail;
+
         #region Constructor
-        public AccountController(IUserRepository userRepository)
+        public AccountController(IUserRepository userRepository,
+            IConfiguration configuration,
+            IMailSender mail)
         {
             _userRepository = userRepository;
+            _configuration = configuration;
+            _mail = mail;
         }
         #endregion
 
@@ -48,7 +61,8 @@ namespace ZamiuxFixer.WEB.Controllers
                 Email = register.Email.Trim().ToLower(),
                 CreateDate = DateTime.Now,
                 IsDelete = false,
-                Password = register.Password,
+                Password = SecretHasher.Hash(register.Password),
+                ActiveCode = Guid.NewGuid().ToString(),
                 RoleId = 1
             };
 
@@ -57,8 +71,126 @@ namespace ZamiuxFixer.WEB.Controllers
 
             #endregion
 
+            // Start TODO : Send Activation Email
+            string BodyEmail = "<div style='direction:rtl'>" +
+                $"<h1>{user_data.UserName} عزیز !</h1><br/>" +
+                $"<p>جهت فعالسازی حساب خود روی لینک زیر کلیک کنید</p>" +
+                $"<p><a href='{_configuration.GetSection("MyDomain")}/Account/ActiveUser/{user_data.ActiveCode}'>لینک فعالسازی</a></p>" +
+                "</div>";
 
-            return View("SuccessRegister",user_data);
+            ViewBag.isSendEmail = _mail.Send(user_data.Email,"فعالسازی حساب کاربری",BodyEmail);   
+
+            // End TODO : Send Activation Email
+
+            ViewBag.SuccessRegister = true;
+            //return View("SuccessRegister",user_data);
+            return View(register);
+        }
+        #endregion
+
+        #region Active User
+        //Active User : domain.com/Account/ActiveUser/54645645t45454
+        public IActionResult ActiveUser(string id)
+        {
+            if (string.IsNullOrEmpty(id))
+            {
+                return BadRequest();
+            }
+
+            var user_info = _userRepository.GetUserByActiveCode(id);
+
+            if (user_info == null)
+            {
+                return BadRequest();
+            }
+
+            //update & active User
+            user_info.IsEmailActive = true;
+            user_info.ActiveCode = Guid.NewGuid().ToString();
+            user_info.ModifiedDate = DateTime.Now;
+
+            _userRepository.Update(user_info);
+            _userRepository.Save();
+
+            return Redirect("/Login?ActiveUser=true");
+        }
+        #endregion
+
+        #region Login
+
+        [HttpGet]
+        [Route("Login")]
+        public IActionResult Login()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [Route("Login")]
+        public IActionResult Login(LoginVM login)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(login);
+            }
+
+            //get User and check user
+            var user_info = _userRepository.GetUserByEmail(login.Email.ToLower().ToString());
+
+            if (user_info == null)
+            {
+                ModelState.AddModelError("Email", "اطلاعات کاربری درست نمی باشد");
+                return View(login);
+            }
+
+            // check user active
+            if (user_info.IsEmailActive == false)
+            {
+                ModelState.AddModelError("Email", "کاربر شما غیرفعال است");
+                return View(login);
+            }
+
+            //check user password
+            bool CheckPasswordUser = SecretHasher.Verify(login.Password,user_info.Password);
+            if (CheckPasswordUser == false)
+            {
+                ModelState.AddModelError("Email", "اطلاعات کاربری درست نمی باشد");
+                return View(login);
+            }
+
+            // start Todo Login
+
+            var claims = new List<Claim>()
+            {
+                new Claim(ClaimTypes.Name,user_info.UserName),
+                new Claim(ClaimTypes.Email,user_info.Email),
+                new Claim("UserID",user_info.UserId.ToString())
+            };
+
+            var identity = new ClaimsIdentity(claims,CookieAuthenticationDefaults.AuthenticationScheme);
+            var principal = new ClaimsPrincipal(identity);
+
+            //Remember
+            var properties = new AuthenticationProperties() { 
+                // yani login bemanad.
+                IsPersistent = login.RememberMe
+            };
+
+            HttpContext.SignInAsync(principal, properties);
+
+            // end Todo Login
+
+            return Redirect("/");
+        }
+
+        #endregion
+
+        #region Logout
+        [Route("Logout")]
+        public IActionResult Logout()
+        {
+            HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            return Redirect("/");
         }
         #endregion
     }

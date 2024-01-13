@@ -32,6 +32,8 @@ namespace ZamiuxFixer.Domain.Users
         public string Password { get; set; }
         public bool IsEmailActive { get; set; }
 
+        public string ActiveCode { get; set; }
+
         #region Relation
         // One User Mitavanad Only One Role daste bashad
 

@@ -1,0 +1,142 @@
+﻿@model ZamiuxFixer.Application.ViewModels.Account.LoginVM
+@{
+    ViewData["Title"] = "ورود به سیستم";
+}
+
+<!DOCTYPE html>
+<html class="no-js" dir="rtl" lang="fa-IR">
+<head>
+    <meta charset="UTF-8">
+    <title> باگ فیکسر - @ViewData["Title"] </title>
+    <partial name="_HeaderRefrences" />
+    <link rel="stylesheet" type="text/css" href="/css/user.css">
+    <script src="/js/jquery.min.js"></script>
+</head>
+<body>
+    <script src="/js/modernizr.js"></script>
+
+    <header class="main-header">
+        <div class="container">
+            <nav>
+                <span><i class="icon-menu-2"></i></span>
+                <div class="inner">
+                    <ul>
+                        <li><a href=""> تگ ها </a></li>
+                        <li><a href=""> پرسش و پاسخ ها </a></li>
+                        <li><a href=""> کاربران </a></li>
+                        <li><a href=""> راهنمای سایت </a></li>
+                    </ul>
+                    <partial name="_Nav" />
+                </div>
+            </nav>
+
+            <a href="" class="logo"><img src="images/logo-dark.svg"></a>
+
+            <div class="clearfix"></div>
+        </div>
+    </header>
+
+    <div class="user-page-style">
+
+        <div class="breadcumb-layer">
+            <div class="container">
+                <ul itemtype="http://schema.org/BreadcrumbList" class="breadcrumb">
+                    <li itemtype="http://schema.org/ListItem" itemscope itemprop="itemListElement"><a href="/" itemprop="item"><span itemprop="name"> باگ فیکسر </span></a></li>
+                    <li itemtype="http://schema.org/ListItem" itemscope itemprop="itemListElement"><a href="/Login" itemprop="item"><span itemprop="name"> ورود به سایت </span></a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="user-page">
+
+            <div class="container">
+
+                <div class="row">
+
+                    <div class="col-md-7 col-sm-12 col-xs-12 pull-left">
+
+                        <div class="inner">
+                            <div class="description">
+                                <p>لطفا به هنگام ورود به حساب کاربری به موارد زیر توجه فرمایید </p>
+                                <ul>
+                                    <li>در صورتی که برای اولین بار به حساب کاربری خود وارد می شوید ، پس از ورود به سامانه ، جهت حفظ امنیت بیشتر ، لطفا رمز عبور خود را تغییر دهید.</li>
+                                    <li>پس از ورود به حساب کاربری ، جهت حفظ امنیت ، لطفا از حساب کاربری خود خارج شوید.</li>
+                                    <li>در صورتی که رمز عبور خود را فراموش کرده اید ، می توانید از طریق شماره موبایلتان ، رمز عبور جدید را دریافت نمایید.</li>
+                                </ul>
+
+                                <div class="register-link">
+                                    <i class="icon-add-user"></i> در صورتی که در سایت ، عضو نیستید ، ابتدا <a href="/Register"> ثبت نام </a> کنید
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-5 col-sm-12 col-xs-12 pull-right">
+
+                        <form asp-area="" asp-controller="Account" asp-action="Login" method="post" class="shadow-style">
+
+                            <div class="inner">
+
+                                <h2> <i class="icon-three-dots"></i> ورود به حساب کاربری </h2>
+
+
+                                <div class="input-layer">
+                                    <span><i class="icon-mail-envelope"></i> پست الکترونیک </span>
+                                    <input type="email" asp-for="Email">
+                                    @*<span class="text-danger" asp-validation-for="Email"></span>*@
+
+                                </div>
+
+                                <div class="input-layer">
+                                    <span><i class="icon-lock"></i> رمز عبور </span>
+                                    <input type="password" asp-for="Password">
+                                    @*<span class="text-danger" asp-validation-for="Password"></span>*@
+                                </div>
+
+                                <div class="captcha-layer">
+                                    <!-- کد کپچا در این لایه قرار بدید تا استایل بگیره-->
+                                </div>
+
+                                <div class="checkbox">
+                                    <input type="checkbox" asp-for="RememberMe">
+                                    <label for="remember-me"> مرا بخاطر بسپار </label>
+                                </div>
+                                
+
+                                <div class="link">
+                                    <a href="/RecoverUser"> رمز عبور خود را فراموش کرده ام !</a>
+                                </div>
+                                <br />
+                                <input class="btn btn-success" type="submit" value="ورود به حساب کاربری" />
+
+                                <br /><br />
+                                <div class="text-danger" asp-validation-summary="All">
+                                </div>
+                            </div>
+
+                        </form>
+
+                        <div class="login-with-social shadow-style">
+                            <span>ورود با سایر حساب های کاربری </span>
+                            <a href="" class="shadow-style"><i class="icon-twitter"></i></a>
+                            <a href="" class="shadow-style"><i class="icon-github"></i></a>
+                            <a href="" class="shadow-style"><i class="icon-google-plus"></i></a>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <partial name="_Footer" />
+    <partial name="_FooterRefrences" />
+    <script src="js/public.js"></script>
+</body>
+</html>

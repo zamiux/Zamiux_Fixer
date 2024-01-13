@@ -18,15 +18,31 @@ namespace ZamiuxFixer.DataLayer.Repositories
             _context = context;
         }
 
-
         #endregion
 
+        #region isExistUserByEmail
         public bool isExistUserByEmail(string email)
         {
             return _context.Users.Any(u => u.Email == email);
         }
+        #endregion
 
 
+        #region Get User By Active Code
+        public User GetUserByActiveCode(string code)
+        {
+            return _context.Users.FirstOrDefault(u => u.ActiveCode == code);
+        }
+
+
+        #endregion
+
+        #region Get User By Email
+        public User GetUserByEmail(string Email)
+        {
+            return _context.Users.FirstOrDefault(u => u.Email == Email);
+        }
+        #endregion
 
 
     }

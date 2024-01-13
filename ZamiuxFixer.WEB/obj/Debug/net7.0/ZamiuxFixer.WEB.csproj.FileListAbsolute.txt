@@ -107,3 +107,8 @@ D:\Projects\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer.WEB\bin\Debug\net7.0
 D:\Projects\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer.WEB\bin\Debug\net7.0\ZamiuxFixer.Domain.pdb
 D:\Projects\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer.WEB\bin\Debug\net7.0\ZamiuxFixer.IOC.pdb
 D:\Projects\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer.WEB\obj\Debug\net7.0\ZamiuxFixer.WEB.csproj.CopyComplete
+D:\Projects\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer.WEB\bin\Debug\net7.0\Humanizer.dll
+D:\Projects\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer.WEB\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\Projects\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer.WEB\bin\Debug\net7.0\Microsoft.Extensions.DependencyModel.dll
+D:\Projects\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer.WEB\bin\Debug\net7.0\Mono.TextTemplating.dll
+D:\Projects\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer.WEB\bin\Debug\net7.0\System.CodeDom.dll

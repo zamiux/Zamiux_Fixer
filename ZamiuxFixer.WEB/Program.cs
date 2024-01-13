@@ -1,4 +1,6 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
+using ZamiuxFixer.Application.SendEmail;
 using ZamiuxFixer.DataLayer;
 using ZamiuxFixer.DataLayer.Context;
 using ZamiuxFixer.DataLayer.Contract;
@@ -19,6 +21,25 @@ builder.Services.AddDbContext<ZamiuxFixerDbContext>(options =>
 #region Add Service Repository From Data Layer
 builder.Services.AddScoped<IRoleRepository, RoleRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IMailSender, SendEmail>();
+#endregion
+
+#region Authentication Type : Cookie Browser
+
+builder.Services.AddAuthentication(options => {
+    options.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+    options.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+    options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+}).AddCookie(options =>
+{
+    options.LoginPath = "/Login";
+    options.LogoutPath = "/Logout";
+    options.AccessDeniedPath = "/Notaccess";
+    options.ExpireTimeSpan = TimeSpan.FromDays(7);
+    options.SlidingExpiration = true;
+});
+
 #endregion
 
 var app = builder.Build();
@@ -35,6 +56,10 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+
+#region Authentication Middleware
+app.UseAuthentication();
+#endregion
 
 app.UseAuthorization();
 

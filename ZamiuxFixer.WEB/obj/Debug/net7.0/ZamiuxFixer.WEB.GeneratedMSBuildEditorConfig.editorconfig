@@ -16,6 +16,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\Projects\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer.WEB
 build_property._RazorSourceGeneratorDebug = 
 
+[D:/Projects/ZamiuxFixer/ZamiuxFixer/ZamiuxFixer/ZamiuxFixer.WEB/Views/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Projects/ZamiuxFixer/ZamiuxFixer/ZamiuxFixer/ZamiuxFixer.WEB/Views/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -46,6 +50,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/Projects/ZamiuxFixer/ZamiuxFixer/ZamiuxFixer/ZamiuxFixer.WEB/Views/Shared/_HeaderRefrences.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9IZWFkZXJSZWZyZW5jZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Projects/ZamiuxFixer/ZamiuxFixer/ZamiuxFixer/ZamiuxFixer.WEB/Views/Shared/_Nav.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9OYXYuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Projects/ZamiuxFixer/ZamiuxFixer/ZamiuxFixer/ZamiuxFixer.WEB/Views/Shared/_ValidationScriptsPartial.cshtml]
