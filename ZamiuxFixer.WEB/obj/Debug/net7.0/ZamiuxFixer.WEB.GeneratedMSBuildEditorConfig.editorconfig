@@ -16,6 +16,42 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\Projects\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer.WEB
 build_property._RazorSourceGeneratorDebug = 
 
+[D:/Projects/ZamiuxFixer/ZamiuxFixer/ZamiuxFixer/ZamiuxFixer.WEB/Areas/UserPanel/Views/Home/ChangePassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVXNlclBhbmVsXFZpZXdzXEhvbWVcQ2hhbmdlUGFzc3dvcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Projects/ZamiuxFixer/ZamiuxFixer/ZamiuxFixer/ZamiuxFixer.WEB/Areas/UserPanel/Views/Home/EditProfile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVXNlclBhbmVsXFZpZXdzXEhvbWVcRWRpdFByb2ZpbGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Projects/ZamiuxFixer/ZamiuxFixer/ZamiuxFixer/ZamiuxFixer.WEB/Areas/UserPanel/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVXNlclBhbmVsXFZpZXdzXEhvbWVcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Projects/ZamiuxFixer/ZamiuxFixer/ZamiuxFixer/ZamiuxFixer.WEB/Areas/UserPanel/Views/Shared/Components/Dashboard/Dashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVXNlclBhbmVsXFZpZXdzXFNoYXJlZFxDb21wb25lbnRzXERhc2hib2FyZFxEYXNoYm9hcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Projects/ZamiuxFixer/ZamiuxFixer/ZamiuxFixer/ZamiuxFixer.WEB/Areas/UserPanel/Views/Shared/Components/PercentCompleted/PercentCompleted.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVXNlclBhbmVsXFZpZXdzXFNoYXJlZFxDb21wb25lbnRzXFBlcmNlbnRDb21wbGV0ZWRcUGVyY2VudENvbXBsZXRlZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Projects/ZamiuxFixer/ZamiuxFixer/ZamiuxFixer/ZamiuxFixer.WEB/Areas/UserPanel/Views/Shared/Components/Profile/Profile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVXNlclBhbmVsXFZpZXdzXFNoYXJlZFxDb21wb25lbnRzXFByb2ZpbGVcUHJvZmlsZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Projects/ZamiuxFixer/ZamiuxFixer/ZamiuxFixer/ZamiuxFixer.WEB/Areas/UserPanel/Views/Shared/_UserPanelLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVXNlclBhbmVsXFZpZXdzXFNoYXJlZFxfVXNlclBhbmVsTGF5b3V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Projects/ZamiuxFixer/ZamiuxFixer/ZamiuxFixer/ZamiuxFixer.WEB/Areas/UserPanel/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVXNlclBhbmVsXFZpZXdzXF9WaWV3SW1wb3J0cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Projects/ZamiuxFixer/ZamiuxFixer/ZamiuxFixer/ZamiuxFixer.WEB/Areas/UserPanel/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVXNlclBhbmVsXFZpZXdzXF9WaWV3U3RhcnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Projects/ZamiuxFixer/ZamiuxFixer/ZamiuxFixer/ZamiuxFixer.WEB/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -30,6 +66,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/Projects/ZamiuxFixer/ZamiuxFixer/ZamiuxFixer/ZamiuxFixer.WEB/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Projects/ZamiuxFixer/ZamiuxFixer/ZamiuxFixer/ZamiuxFixer.WEB/Views/Shared/Components/UserProfile/UserProfile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcVXNlclByb2ZpbGVcVXNlclByb2ZpbGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Projects/ZamiuxFixer/ZamiuxFixer/ZamiuxFixer/ZamiuxFixer.WEB/Views/Shared/Error.cshtml]

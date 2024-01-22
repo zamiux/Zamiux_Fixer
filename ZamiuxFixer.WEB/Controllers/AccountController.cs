@@ -29,6 +29,7 @@ namespace ZamiuxFixer.WEB.Controllers
         #endregion
 
         #region Register
+
         [HttpGet]
         [Route("/Register")]
         public IActionResult Register()
@@ -75,7 +76,7 @@ namespace ZamiuxFixer.WEB.Controllers
             string BodyEmail = "<div style='direction:rtl'>" +
                 $"<h1>{user_data.UserName} عزیز !</h1><br/>" +
                 $"<p>جهت فعالسازی حساب خود روی لینک زیر کلیک کنید</p>" +
-                $"<p><a href='{_configuration.GetSection("MyDomain")}/Account/ActiveUser/{user_data.ActiveCode}'>لینک فعالسازی</a></p>" +
+                $"<p><a href='{_configuration.GetSection("MyDomain").Value}/Account/ActiveUser/{user_data.ActiveCode}'>لینک فعالسازی</a></p>" +
                 "</div>";
 
             ViewBag.isSendEmail = _mail.Send(user_data.Email,"فعالسازی حساب کاربری",BodyEmail);   
@@ -89,6 +90,7 @@ namespace ZamiuxFixer.WEB.Controllers
         #endregion
 
         #region Active User
+
         //Active User : domain.com/Account/ActiveUser/54645645t45454
         public IActionResult ActiveUser(string id)
         {

@@ -27,7 +27,6 @@ namespace ZamiuxFixer.DataLayer.Repositories
         }
         #endregion
 
-
         #region Get User By Active Code
         public User GetUserByActiveCode(string code)
         {

@@ -1,0 +1,17 @@
+﻿@model int
+@{
+    int remain = 100 - @Model;
+}
+
+<section class="sidebar layer-style open progress-account">
+    <header><h3> تکمیل حساب کاربری </h3><i class="zmdi zmdi-chevron-down"></i></header>
+    <div class="inner">
+        <div class="complete-progress">
+            <div id="progress" data-range="@((double)Model / 100)"> <span>@Model%</span> </div>
+        </div>
+
+        <div class="detail">
+            <span> @remain% تا تکمیل حساب کاربری  </span>
+        </div>
+    </div>
+</section>

@@ -18,9 +18,9 @@ namespace ZamiuxFixer.Application.SendEmail
             {
                 var mail = new MailMessage();
 
-                var smtpServer = new SmtpClient("smtp.gmail.com");
+                var smtpServer = new SmtpClient("sandbox.smtp.mailtrap.io", 2525);
 
-                mail.From = new MailAddress("barnamenevisanaspcourse@gmail.com", "Asp course mail");
+                mail.From = new MailAddress("mohsen.1408@gmail.com", "Asp course mail");
 
                 mail.To.Add(to);
 
@@ -32,7 +32,7 @@ namespace ZamiuxFixer.Application.SendEmail
 
                 smtpServer.Port = 587;
 
-                smtpServer.Credentials = new NetworkCredential("barnamenevisanaspcourse@gmail.com", "kokjbtvrwkjlpnao");
+                smtpServer.Credentials = new NetworkCredential("b768dea544f23d", "********dd64");
 
                 smtpServer.EnableSsl = true;
 

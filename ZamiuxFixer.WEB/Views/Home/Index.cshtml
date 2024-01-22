@@ -12,7 +12,7 @@
     <div class="landing-layer">
         <div class="container">
             <header>
-                <a href="" class="logo"><img src="/images/logo.svg"></a>
+                <a href="/" class="logo"><img src="/images/logo.svg"></a>
                 <h1> سامانه <span>پرسش و پاسخ</span> برنامه نویسان و توسعه دهندگان </h1>
                 <h2> آموزش ببینید ، مهارت ها و تخصص های خود را به اشتراک بگذارید ، بپرسید و به جواب برسید  </h2>
             </header>
@@ -39,8 +39,8 @@
                     <li><a href=""> راهنمای سایت </a></li>
                 </ul>
             </nav>
-
-            <partial name="_Nav" />
+            @await Component.InvokeAsync("UserProfile")
+            @*<partial name="_Nav" />*@
 
             <div class="clearfix"></div>
 

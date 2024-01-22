@@ -26,3 +26,5 @@ miaeim baraye har koodoom az Model(Entity) miam ye Repository misaze.
 
 faghat Repository hastesh ke be DB va DbContext dastresi dare.
 ----------------------------------------------------------------
+img src with default : 
+@(!string.IsNullOrEmpty(Model.ImageName) ? PathTools.SliderImage + Model.ImageName : "/images/defaults/default.png")

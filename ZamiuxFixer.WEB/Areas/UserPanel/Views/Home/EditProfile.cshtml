@@ -1,0 +1,108 @@
+﻿@model ZamiuxFixer.Domain.Users.User
+@{
+    ViewData["Title"] = "ویرایش پروفایل کاربری";
+    Layout = "~/Areas/UserPanel/Views/Shared/_UserPanelLayout.cshtml";
+}
+
+<div class="account-content-layer layer-style">
+    <h3> ویرایش حساب کاربری  </h3>
+    <div class="inner">
+        <form enctype="multipart/form-data" class="form-layer-style" method="post" asp-asp-area="UserPanel" asp-asp-controller="Home" asp-action="EditProfile" >
+            <div class="row">
+
+                <div class="col-md-6 col-sm-12 col-xs-12">
+                    <!-- input -->
+                    <div class="input-layer">
+                        <label><i class="icon-user-shape"></i>  نام و نام خانوادگی </label>
+                        <input asp-for="UserName">
+                    </div>
+                    <!--/ input -->
+                </div>
+                <div class="col-md-6 col-sm-12 col-xs-12">
+                    <!-- input -->
+                    <div class="input-layer" data-mddatetimepicker="true" data-trigger="click" data-targetselector="#birthday-date">
+                        <label><i class="icon-work"></i>  عنوان شغلی </label>
+                        <input asp-for="JobTitle">
+                    </div>
+                    <!--/ input -->
+                </div>
+
+                <div class="col-md-6 col-sm-12 col-xs-12">
+                    <!-- input -->
+                    <div class="input-layer">
+                        <label><i class="icon-mail-envelope"></i>  ایمیل </label>
+                        <input asp-for="Email">
+                    </div>
+                    <!--/ input -->
+                </div>
+
+                <div class="col-md-6 col-sm-12 col-xs-12">
+                    <!-- input -->
+                    <div class="input-layer">
+                        <label><i class="icon-smartphone"></i>  شماره موبایل </label>
+                        <input asp-for="Mobile">
+                    </div>
+                    <!-- /input -->
+                </div>
+
+                <div class="col-md-6 col-sm-12 col-xs-12">
+                    <!-- input -->
+                    <div class="input-layer">
+                        <label><i class="icon-work"></i>  کشور </label>
+                        <input asp-for="Country">
+                    </div>
+                    <!-- /input -->
+                </div>
+                
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <!-- textarea -->
+                    <div class="textarea-layer">
+                        <label><i class="icon-resume"></i>  توضیحات </label>
+                        <textarea asp-for="Description"> </textarea>
+                    </div>
+                    <!-- /textarea -->
+                </div>
+
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <!-- input -->
+                    <div class="input-layer">
+                        <label><i class="icon-user"></i>  تصویر پروفایل </label>
+                        <input type="file" id="imgUp" name="imgUp">
+                        <br />
+                        <img id="pimg" src="@(!string.IsNullOrEmpty(Model.Avatar) ? "/images/Avatars/" + Model.Avatar : "/images/pic/avatar.jpg")" class="img img-thumbnail" style="max-width:150px" />
+                    </div>
+                    <!-- /input -->
+                </div>
+
+                <div class="col-md-3 col-sm-3 col-xs-12 pull-left">
+                    <button class="submit-button green"> <span>ویرایش اطلاعات</span> </button>
+                </div>
+
+                
+
+            </div>
+
+           
+        </form>
+
+        @if (ViewBag.isEdit == true)
+        {
+            <div class="alert alert-success">
+                ویرایش پروفایل کاربری با موفقیت انجام شد
+            </div>
+        }
+    </div>
+</div>
+
+
+@section scripts{
+    <script src="https://cdn.ckeditor.com/4.22.1/standard/ckeditor.js"></script>
+    <script>
+        imgUp.onchange = evt => {
+            const [file] = imgUp.files
+            if (file) {
+                pimg.src = URL.createObjectURL(file)
+            }
+        }
+    </script>
+}                    

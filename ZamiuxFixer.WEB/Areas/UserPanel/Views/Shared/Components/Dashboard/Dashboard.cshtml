@@ -1,0 +1,21 @@
+﻿@model ZamiuxFixer.Domain.Users.User
+@using ZamiuxFixer.Application.Convertor;
+
+<div class="quick-access layer-style">
+    <div class="img-layer">
+        <a href="javascript:void(0)" class="change-image"><i class="icon-pencil-edit"></i></a>
+        <img src="@(!string.IsNullOrEmpty(Model.Avatar) ? "/images/Avatars/" + Model.Avatar : "/images/pic/avatar.jpg")" alt="@Model.UserName">
+    </div> 
+    <!-- you can use "gold" , "silver , "bronze" for medals -->
+    <div class="detail gold">
+        <h3> <i class="icon-quality"></i> @Model.UserName </h3>
+        <span> عضویت : @Model.CreateDate.ToShamsi() </span>
+        <span> کاربری طلایی با 1563 امتیاز </span>
+    </div>
+    <ul>
+        <li><a href="/userpanel" data-toggle="tooltip" data-placement="top" title=" داشبورد "><i class="icon-settings"></i></a></li>
+        <li><a asp-area="UserPanel" asp-controller="Home" asp-action="EditProfile" data-toggle="tooltip" data-placement="top" title=" ویرایش اطلاعات "><i class="icon-profile"></i></a></li>
+        <li><a asp-area="UserPanel" asp-controller="Home" asp-action="ChangePassword" data-toggle="tooltip" data-placement="top" title=" تغییر رمز عبور "><i class="icon-safe"></i></a></li>
+        <li><a href="/Logout" data-toggle="tooltip" data-placement="top" title=" خروج از حساب "><i class="icon-power-symbol"></i></a></li>
+    </ul>
+</div>

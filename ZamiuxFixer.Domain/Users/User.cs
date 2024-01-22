@@ -30,8 +30,12 @@ namespace ZamiuxFixer.Domain.Users
         [Required]
         [MaxLength(300)]
         public string Password { get; set; }
+        public string? Avatar { get; set; }
+        public string? Description { get; set; }
+        public string? JobTitle { get; set; }
+        public string? Country { get; set; }
+        public int ProfileVisit { get; set; }
         public bool IsEmailActive { get; set; }
-
         public string ActiveCode { get; set; }
 
         #region Relation
