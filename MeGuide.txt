@@ -1,15 +1,37 @@
 ZamiuxFixer.Web : Core MVC -> for Web Structure
 ZamiuxFixer.DataLayer : Class library -> for Data and Connection DB,Context and Repository
 ZamiuxFixer.Application : Class library -> For Logic and Apps , Servics and Tools
-ZamiuxFixer.IOC : Class library -> Inversion Of Controll -> Tazrigh Vabastegi
-ZamiuxFixer.Domain : Class library -> For DB Models,Entity and Base Entity  
-----------------
-install packages in ZamiuxFixer.DataLayer
+ZamiuxFixer.Domain : Class library -> For DB Models,Entity and Base Entity
+*ZamiuxFixer.IOC : Class library -> Inversion Of Controll -> Tazrigh Vabastegi
+-----------------------------------------------------------------------------
+install packages in ZamiuxFixer.DataLayer:
 1- Microsoft.EntityFrameworkCore 7.0
 2- Microsoft.EntityFrameworkCore.Design 7.0
 3- Microsoft.EntityFrameworkCore.Tools 7.0
 4- Microsoft.EntityFrameworkCore.sqlServer 7.0
-
+5- Microsoft.EntityFrameworkCore.Abstractions 7.0
+6- Microsoft.EntityFrameworkCore.Analyzers 7.0
+7- Microsoft.EntityFrameworkCore.Relational 7.0
+8- Microsoft.VisualStudio.Web.CodeGeneration.Design 7.0
+9- Include ZamiuxFixer.Domain
+------------------------------------------------
+install packages in ZamiuxFixer.Domain:
+1- Microsoft.EntityFrameworkCore 7.0
+-------------------------------------
+install packages in ZamiuxFixer.Web:
+1- Microsoft.EntityFrameworkCore 7.0
+2- Microsoft.EntityFrameworkCore.Design 7.0
+3- Microsoft.EntityFrameworkCore.Tools 7.0
+4- Microsoft.EntityFrameworkCore.sqlServer 7.0
+5- Microsoft.VisualStudio.Web.CodeGeneration.Design 7.0
+6- Microsoft.EntityFrameworkCore.Abstractions 7.0
+7- Microsoft.EntityFrameworkCore.Analyzers 7.0
+8- Microsoft.EntityFrameworkCore.Relational 7.0
+9- Microsoft.VisualStudio.Web.CodeGeneration.Design 7.0
+10- Include ZamiuxFixer.Application
+11- Include ZamiuxFixer.DataLayer
+12- Include ZamiuxFixer.Domain
+-------------------------------------------------------------
 then
 Add Poject (ZamiuxFixer.Domain) To (ZamiuxFixer.DataLayer) az Add Project Refrences
 
