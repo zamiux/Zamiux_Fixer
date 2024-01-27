@@ -1,0 +1,60 @@
+﻿@model IEnumerable<ZamiuxFixer.Domain.Users.User>
+@{
+    ViewData["Title"] = "دنبال کنندگان";
+    Layout = "~/Areas/UserPanel/Views/Shared/_UserPanelLayout.cshtml";
+}
+
+<div class="account-content-layer layer-style">
+    <header><h3> دنبال کنندگان </h3><i> @Model.Count() نفر </i></header>
+
+    <div class="inner follow-member">
+
+        <div class="row">
+
+            @foreach (var following in Model)
+            {
+                <!-- col -->
+                <div class="col-md-4 col-sm-6 col-xs-6 follow-member-col">
+                    <!-- follower col -->
+                    <div class="inner layer-style">
+                        <!-- اگر که هر دو طرف همدیگه رو فالو کرده بودن این علامت نمایش داده بشه -->
+                        <span><i class="icon-user-shape"></i></span>
+                        <a href="/Profile/@following.UserId" class="img-layer"><img src="@(!string.IsNullOrEmpty(following.Avatar) ? "/Images/Avatars/" + following.Avatar : "/images/pic/avatar.jpg")"></a>
+                        <h2> @following.UserName </h2>
+                        <h3> @following.JobTitle </h3>
+
+                        <div class="action-layer">
+                            @*<a href="" class="accept-req"><i class="icon-check"></i></a>*@
+                            @*<a href="" class="delete-req"><i class="icon-delete"></i></a>*@
+                            <a href="/Account/Follow/@following.UserId" class="block-user"><i class="icon-remove"></i></a>
+                        </div>
+                    </div>
+                    <!-- /follower col -->
+                </div>
+                <!-- /col -->
+            }
+            
+            
+        </div>
+
+
+        <!-- paging -->
+        <div class="pagination-layer">
+            <div class="inner">
+                <a href="" class="next-page"> صفحه بعدی </a>
+                <div class="pages">
+                    <a href="" class="page">1</a>
+                    <a href="" class="page">2</a>
+                    <a href="" class="page current">3</a>
+                    <a href="" class="page">4</a>
+                    <a href="" class="page">5</a>
+                    <a href="" class="page">...</a>
+                </div>
+                <a href="" class="prev-page"> صفحه قبلی </a>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+

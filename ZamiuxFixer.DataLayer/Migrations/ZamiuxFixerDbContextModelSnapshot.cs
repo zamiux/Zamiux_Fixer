@@ -122,20 +122,69 @@ namespace ZamiuxFixer.DataLayer.Migrations
                     b.ToTable("Users");
                 });
 
+            modelBuilder.Entity("ZamiuxFixer.Domain.Users.UserFollowing", b =>
+                {
+                    b.Property<int>("FollowingId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("FollowingId"));
+
+                    b.Property<int>("Follower")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Following")
+                        .HasColumnType("int");
+
+                    b.HasKey("FollowingId");
+
+                    b.HasIndex("Follower");
+
+                    b.HasIndex("Following");
+
+                    b.ToTable("UserFollowings");
+                });
+
             modelBuilder.Entity("ZamiuxFixer.Domain.Users.User", b =>
                 {
                     b.HasOne("ZamiuxFixer.Domain.Users.Role", "Role")
                         .WithMany("Users")
                         .HasForeignKey("RoleId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Role");
                 });
 
+            modelBuilder.Entity("ZamiuxFixer.Domain.Users.UserFollowing", b =>
+                {
+                    b.HasOne("ZamiuxFixer.Domain.Users.User", "User1")
+                        .WithMany("UserFollowing1")
+                        .HasForeignKey("Follower")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("ZamiuxFixer.Domain.Users.User", "User2")
+                        .WithMany("UserFollowing2")
+                        .HasForeignKey("Following")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("User1");
+
+                    b.Navigation("User2");
+                });
+
             modelBuilder.Entity("ZamiuxFixer.Domain.Users.Role", b =>
                 {
                     b.Navigation("Users");
+                });
+
+            modelBuilder.Entity("ZamiuxFixer.Domain.Users.User", b =>
+                {
+                    b.Navigation("UserFollowing1");
+
+                    b.Navigation("UserFollowing2");
                 });
 #pragma warning restore 612, 618
         }

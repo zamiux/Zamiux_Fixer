@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "9j2hfvEe86gQLBPLZ6t51TqWEXHbaeAukSaHUGTCf7M=",
+  "Hash": "BLeLfNUxgiaispfwbDjG4wSyGFRG9mEuKtnwrL8pUas=",
   "Source": "ZamiuxFixer.WEB",
   "BasePath": "_content/ZamiuxFixer.WEB",
   "Mode": "Default",
@@ -729,6 +729,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\404.svg"
+    },
+    {
+      "Identity": "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.WEB\\wwwroot\\images\\Avatars\\0126648b-bc53-4bdb-922d-d3f34f1cb2df.jpg",
+      "SourceId": "ZamiuxFixer.WEB",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.WEB\\wwwroot\\",
+      "BasePath": "_content/ZamiuxFixer.WEB",
+      "RelativePath": "images/Avatars/0126648b-bc53-4bdb-922d-d3f34f1cb2df.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\Avatars\\0126648b-bc53-4bdb-922d-d3f34f1cb2df.jpg"
     },
     {
       "Identity": "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.WEB\\wwwroot\\images\\Avatars\\f90770fe-0308-413e-b4ba-9987a85f3754.jpg",

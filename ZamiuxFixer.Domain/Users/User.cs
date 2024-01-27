@@ -43,6 +43,12 @@ namespace ZamiuxFixer.Domain.Users
 
         [ForeignKey("RoleId")] // moshakhas mikoni kodoom feild Fk mishe
         public Role Role { get; set; }
+
+        [InverseProperty("User1")]
+        public List<UserFollowing>? UserFollowing1 { get; set; }
+
+        [InverseProperty("User2")]
+        public List<UserFollowing>? UserFollowing2 { get; set; }
         #endregion
 
     }

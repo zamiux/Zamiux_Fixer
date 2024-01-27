@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Win32;
 using System.Security.Claims;
 using ZamiuxFixer.Application.Security;
@@ -134,6 +135,36 @@ namespace ZamiuxFixer.WEB.Areas.UserPanel.Controllers
             return View(changePassword);
         }
 
+        #endregion
+
+        #region Following
+        public IActionResult Following()
+        {
+            // chekc User
+            int UserId = int.Parse(User.FindFirstValue("UserID"));
+            var following = _context.UserFollowings
+                .Where(f=>f.Follower == UserId)
+                .Include(u=>u.User2)
+                .Select(s=>s.User2)
+                .ToList();
+
+            return View(following);
+        }
+        #endregion
+
+        #region Followers
+        public IActionResult Followers()
+        {
+            // chekc User
+            int UserId = int.Parse(User.FindFirstValue("UserID"));
+            var followers = _context.UserFollowings
+                .Where(f => f.Following == UserId)
+                .Include(u => u.User1)
+                .Select(s => s.User1)
+                .ToList();
+
+            return View(followers);
+        }
         #endregion
     }
 }

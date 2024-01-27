@@ -13,10 +13,21 @@ namespace ZamiuxFixer.DataLayer.Context
         }
         #endregion
 
+        #region OnModelCreating
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            foreach (var relationship in modelBuilder.Model.GetEntityTypes().SelectMany(e => e.GetForeignKeys()))
+            {
+                relationship.DeleteBehavior = DeleteBehavior.Restrict;
+            }
+        }
+        #endregion
+
 
         #region DbSet Entites
         public DbSet<Role> Roles { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<UserFollowing> UserFollowings { get; set; }
         #endregion
 
         #region Database Connection 

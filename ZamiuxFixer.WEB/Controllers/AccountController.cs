@@ -8,6 +8,8 @@ using ZamiuxFixer.Application.SendEmail;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
+using ZamiuxFixer.DataLayer.Context;
 
 namespace ZamiuxFixer.WEB.Controllers
 {
@@ -16,15 +18,18 @@ namespace ZamiuxFixer.WEB.Controllers
         private readonly IUserRepository _userRepository;
         private readonly IConfiguration _configuration;
         private readonly IMailSender _mail;
+        private readonly ZamiuxFixerDbContext _context;
 
         #region Constructor
         public AccountController(IUserRepository userRepository,
             IConfiguration configuration,
-            IMailSender mail)
+            IMailSender mail,
+            ZamiuxFixerDbContext context)
         {
             _userRepository = userRepository;
             _configuration = configuration;
             _mail = mail;
+            _context = context;
         }
         #endregion
 
@@ -193,6 +198,39 @@ namespace ZamiuxFixer.WEB.Controllers
         {
             HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
             return Redirect("/");
+        }
+        #endregion
+
+        #region Followers
+        [Authorize]
+        public IActionResult Follow(int id) // id : yani in id = userid mikhad follow kone
+        {
+            // aval info oon user ke mikhad follow kone ro peida kon
+            int UserId = int.Parse(User.FindFirstValue("UserId"));
+
+            var follow = _context.UserFollowings
+                .FirstOrDefault(f => f.Follower == UserId && f.Following == id);
+             
+            if (follow == null)
+            {
+                // Add follow
+
+                _context.UserFollowings.Add(new UserFollowing()
+                {
+                    Follower = UserId,
+                    Following = id
+                });
+            }
+            else
+            {
+                // unfollow
+
+                _context.UserFollowings.Remove(follow);
+            }
+
+            _context.SaveChanges();
+
+            return Redirect($"/Profile/{id}");
         }
         #endregion
     }
