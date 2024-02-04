@@ -29,7 +29,21 @@
                         <li><a href=""> کاربران </a></li>
                         <li><a href=""> راهنمای سایت </a></li>
                     </ul>
-                    @await Component.InvokeAsync("UserProfile")
+                    <div class="clientarea-layer">
+                        @if (User.Identity.IsAuthenticated == true)
+                        {
+                            @await Component.InvokeAsync("UserProfile")
+                        }
+                        else
+                        {
+                            <div class="signout-status">
+                                <i class="icon-profile"></i>
+                                <a href="/Login"> ورود / </a>
+                                <a href="/Register"> عضویت </a>
+                            </div>
+                        }
+
+                    </div>
                     @*<div class="clientarea-layer">
                         <div class="loggedin-status">
                             <span> <i class="icon-profile"></i> <span>حساب کاربری شما</span>  </span>

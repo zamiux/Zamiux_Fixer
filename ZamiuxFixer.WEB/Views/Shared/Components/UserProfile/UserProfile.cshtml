@@ -1,6 +1,6 @@
 ﻿@model ZamiuxFixer.Domain.Users.User
 
-<div class="clientarea-layer">
+
     @if (User.Identity.IsAuthenticated)
     {
         <div class="loggedin-status">
@@ -27,13 +27,5 @@
             </div>
         </div>
     }
-    else
-    {
-        <div class="signout-status">
-            <i class="icon-profile"></i>
-            <a href="/Login"> ورود / </a>
-            <a href="/Register"> عضویت </a>
-        </div>
-    }
 
-</div>
+

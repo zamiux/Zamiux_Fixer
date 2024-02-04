@@ -1,0 +1,20 @@
+﻿@model ZamiuxFixer.Application.ViewModels.Account.ShowSummaryProfileVW
+
+<ul>
+    <li class="open">
+        <span> حساب کاربری </span>
+        <ul>
+            <li class="active"><a href="/userpanel"> مشاهده حساب کاربری </a></li>
+            @*<li><a href="account-1.html"> ویرایش حساب کاربری </a></li>*@
+            <li><a asp-area="UserPanel" asp-controller="Home" asp-action="EditProfile"> تنظیمات حساب کاربری </a></li>
+            <li><a asp-area="UserPanel" asp-controller="Home" asp-action="ChangePassword"> تغییر رمز عبور </a></li>
+        </ul>
+    </li>
+    <li><a href="account-4.html"> مدیریت رزومه  </a>  </li>
+    <li><a href="account-5.html"> پرسش های من  </a> <i> @Model.QuestionCount </i> </li>
+    <li><a href="account-6.html"> پاسخ های من  </a> <i> @Model.AnswerCount </i> </li>
+    <li><a href="/UserPanel/Home/Following"> دنبال کنندگان  </a> <i> @Model.FollowerCount </i> </li>
+    <li><a href="/UserPanel/Home/Followers"> دنبال شونده ها  </a> <i> @Model.FollowingCount </i> </li>
+    <li><a href="account-9.html"> صندوق پیام ها  </a> <i> 0 </i> </li>
+    <li><a href="account-10.html"> سوالات متداول و راهنما  </a> </li>
+</ul>

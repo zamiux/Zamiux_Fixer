@@ -22,6 +22,68 @@ namespace ZamiuxFixer.DataLayer.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("ZamiuxFixer.Domain.Questions.Question", b =>
+                {
+                    b.Property<int>("QuestionId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("QuestionId"));
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDelete")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("ModifiedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("QuestionVisit")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasMaxLength(600)
+                        .HasColumnType("nvarchar(600)");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("QuestionId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Questions");
+                });
+
+            modelBuilder.Entity("ZamiuxFixer.Domain.Questions.QuestionTag", b =>
+                {
+                    b.Property<int>("TagId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TagId"));
+
+                    b.Property<int>("QuestionId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Tag")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("TagId");
+
+                    b.HasIndex("QuestionId");
+
+                    b.ToTable("QuestionTags");
+                });
+
             modelBuilder.Entity("ZamiuxFixer.Domain.Users.Role", b =>
                 {
                     b.Property<int>("RoleId")
@@ -145,6 +207,28 @@ namespace ZamiuxFixer.DataLayer.Migrations
                     b.ToTable("UserFollowings");
                 });
 
+            modelBuilder.Entity("ZamiuxFixer.Domain.Questions.Question", b =>
+                {
+                    b.HasOne("ZamiuxFixer.Domain.Users.User", "User")
+                        .WithMany("Questions")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("ZamiuxFixer.Domain.Questions.QuestionTag", b =>
+                {
+                    b.HasOne("ZamiuxFixer.Domain.Questions.Question", "Question")
+                        .WithMany("QuestionTags")
+                        .HasForeignKey("QuestionId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Question");
+                });
+
             modelBuilder.Entity("ZamiuxFixer.Domain.Users.User", b =>
                 {
                     b.HasOne("ZamiuxFixer.Domain.Users.Role", "Role")
@@ -175,6 +259,11 @@ namespace ZamiuxFixer.DataLayer.Migrations
                     b.Navigation("User2");
                 });
 
+            modelBuilder.Entity("ZamiuxFixer.Domain.Questions.Question", b =>
+                {
+                    b.Navigation("QuestionTags");
+                });
+
             modelBuilder.Entity("ZamiuxFixer.Domain.Users.Role", b =>
                 {
                     b.Navigation("Users");
@@ -182,6 +271,8 @@ namespace ZamiuxFixer.DataLayer.Migrations
 
             modelBuilder.Entity("ZamiuxFixer.Domain.Users.User", b =>
                 {
+                    b.Navigation("Questions");
+
                     b.Navigation("UserFollowing1");
 
                     b.Navigation("UserFollowing2");

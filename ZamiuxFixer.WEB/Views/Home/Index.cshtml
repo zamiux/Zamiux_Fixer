@@ -39,7 +39,21 @@
                     <li><a href=""> راهنمای سایت </a></li>
                 </ul>
             </nav>
-            @await Component.InvokeAsync("UserProfile")
+            <div class="clientarea-layer">
+                @if (User.Identity.IsAuthenticated == true)
+                {
+                    @await Component.InvokeAsync("UserProfile")
+                }
+                else
+                {
+                    <div class="signout-status">
+                        <i class="icon-profile"></i>
+                        <a href="/Login"> ورود / </a>
+                        <a href="/Register"> عضویت </a>
+                    </div>
+                }
+
+            </div>
             @*<partial name="_Nav" />*@
 
             <div class="clearfix"></div>

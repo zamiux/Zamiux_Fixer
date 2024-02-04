@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using ZamiuxFixer.Domain.Questions;
 using ZamiuxFixer.Domain.Users;
 
 namespace ZamiuxFixer.DataLayer.Context
@@ -28,6 +29,11 @@ namespace ZamiuxFixer.DataLayer.Context
         public DbSet<Role> Roles { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<UserFollowing> UserFollowings { get; set; }
+        #endregion
+
+        #region Question
+        public DbSet<Question> Questions { get; set; }
+        public DbSet<QuestionTag> QuestionTags { get; set; }
         #endregion
 
         #region Database Connection 

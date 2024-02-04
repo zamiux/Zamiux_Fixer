@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ZamiuxFixer.Domain.BaseEntity;
+using ZamiuxFixer.Domain.Questions;
 
 namespace ZamiuxFixer.Domain.Users
 {
@@ -49,6 +50,8 @@ namespace ZamiuxFixer.Domain.Users
 
         [InverseProperty("User2")]
         public List<UserFollowing>? UserFollowing2 { get; set; }
+
+        public List<Question> Questions { get; set; }
         #endregion
 
     }
