@@ -171,7 +171,8 @@ namespace ZamiuxFixer.WEB.Controllers
             {
                 new Claim(ClaimTypes.Name,user_info.UserName),
                 new Claim(ClaimTypes.Email,user_info.Email),
-                new Claim("UserID",user_info.UserId.ToString())
+                new Claim("UserID",user_info.UserId.ToString()),
+                new Claim("Avatar",user_info.Avatar.ToString())
             };
 
             var identity = new ClaimsIdentity(claims,CookieAuthenticationDefaults.AuthenticationScheme);

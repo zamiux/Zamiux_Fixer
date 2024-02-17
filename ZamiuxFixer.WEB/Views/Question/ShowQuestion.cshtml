@@ -3,11 +3,17 @@
 @using ZamiuxFixer.Application.Convertor
 
 @{
-    //int UserId = 0;
-    //if (User.Identity.IsAuthenticated == true)
-    //{
-    //    UserId = int.Parse(Context.User.FindFirst("UserId").ToString());
-    //}
+    int UserId = 0;
+    string styleFav = "";
+    if (User.Identity.IsAuthenticated == true)
+    {
+        var user_temp = Context.User.FindFirst("UserID").Value;
+        UserId = int.Parse(user_temp);
+        if (Model.QuestionFavorites.Any(f => f.UserId == UserId && f.QuestionId == Model.QuestionId))
+        {
+            styleFav = "color:#ffb301"; 
+        }
+    }
     Layout = null;
 }
 
@@ -100,8 +106,8 @@
                             <span> @Model.CreateDate.ToShamsi() </span>
                             <span><i> @Model.QuestionVisit </i> بازدید </span>
                             <span><i> 5 </i> پاسخ </span>
-                            <span><i> 12K </i> رای </span>
-                            <span><i> 3 </i> امتیاز </span>
+                            <span><i id="fav_q"> @Model.QuestionFavorites?.Count() </i> رای </span>
+                            <span><i id="vote_q"> 3 </i> امتیاز </span>
 
                         </header>
 
@@ -115,17 +121,17 @@
                                 </p>
 
                                 <div class="rating-layer">
-                                    <form class="scoring-layer" action="" method="">
-                                        <button class="plus"><i class="icon-caret-up"></i></button>
-                                        <span> 12K </span>
-                                        <button class="negative"><i class="icon-caret-down"></i></button>
-                                    </form>
-                                    <form class="star-rating" action="" method="">
+                                    <div class="scoring-layer">
+                                        <button class="plus" onclick="Vote(@Model.QuestionId,'True')"><i class="icon-caret-up"></i></button>
+                                        <span> 0 </span>
+                                        <button class="negative" onclick="Vote(@Model.QuestionId,'false')"><i class="icon-caret-down"></i></button>
+                                    </div>
+                                    <div class="star-rating">
                                         <!-- if user rate this post , use " active " class for Button and disabled this -->
                                         <!-- <button class="active"><i class="icon-star"></i></button> -->
-                                        <button><i class="icon-star"></i></button>
-                                        <span> 3 </span>
-                                    </form>
+                                        <button onclick="AddToFav(@Model.QuestionId)"><i style="@styleFav" class="icon-star"></i></button>
+                                        <span id="span_fav"> @Model.QuestionFavorites?.Count() </span>
+                                    </div>
                                 </div>
 
                             </div>
@@ -333,7 +339,7 @@
                                 <div class="rating-layer">
                                     <form class="scoring-layer" action="" method="">
                                         <button class="plus"><i class="icon-caret-up"></i></button>
-                                        <span> 12K </span>
+                                        <span id="vote_span"> 0 </span>
                                         <button class="negative"><i class="icon-caret-down"></i></button>
                                     </form>
                                     <form class="selected-answer">
@@ -503,6 +509,25 @@
     <script src="/js/bootstrap.min.js"></script>
     <script src="/js/public.js"></script>
     <script src="/js/question.js"></script>
+    <script>
+        function AddToFav(id) 
+        {
+            //url: /Question/AddToFav/1
 
+            $.get("/Question/AddToFav/"+id,function(res){
+                $("#fav_q").html(res);
+                $("#span_fav").html(res);
+                //$(".icon-star").attr("style","color:#ffb301");
+            });
+        }
+
+        function Vote(id,vote)
+        {
+            $.get("/Question/AddVote/" + id+"?vote="+vote, function (res) {
+                $("#vote_q").html(res);
+                $("#vote_span").html(res);
+            });
+        }
+    </script>
 </body>
 </html>

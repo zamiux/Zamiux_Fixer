@@ -17,6 +17,7 @@ namespace ZamiuxFixer.WEB.Controllers
             _context = context;
         }
         #endregion
+
         public IActionResult Index()
         {
             return View();
@@ -83,11 +84,13 @@ namespace ZamiuxFixer.WEB.Controllers
             var question = _context.Questions
                 .Include(q => q.User)
                 .Include(q => q.QuestionTags)
+                .Include(q => q.QuestionVotes)
+                .Include(q => q.QuestionFavorites)
                 .FirstOrDefault(q => q.QuestionId == id);
 
             if (question == null)
             {
-                return NotFound();
+                return NotFound(); 
             }
 
             //afzaye tedad bazdid
@@ -182,5 +185,79 @@ namespace ZamiuxFixer.WEB.Controllers
             return RedirectPermanent("/Show-Question/" + id);
         }
         #endregion
+
+        #region Vote
+        //url: /Question/AddToFav/1
+        [Authorize]
+        public int AddToFav(int id)
+        {
+            //current user
+            int UserId = int.Parse(User.FindFirstValue("UserId"));
+
+            var fav = _context.QuestionFavorites
+                .FirstOrDefault(f => f.UserId == UserId  && f.QuestionId == id);
+
+            if(fav == null)
+            {
+                _context.QuestionFavorites.Add(new QuestionFavorite() { 
+                    QuestionId = id,
+                    UserId = UserId
+                }); 
+            }
+            else
+            {
+                _context.Remove(fav);
+            }
+            _context.SaveChanges();
+
+            return _context.QuestionFavorites.Count(f=>f.QuestionId == id);
+        }
+        #endregion
+
+        #region Add Vote
+
+        [Authorize]
+        public int AddVote(int id,string vote)
+        {
+            //current user
+            int UserId = int.Parse(User.FindFirstValue("UserId"));
+
+            var vote_data = _context.QuestionVotes
+                .FirstOrDefault(f => f.UserId == UserId && f.QuestionId == id);
+
+            if(vote_data != null)
+            {
+                if (vote_data.Vote == bool.Parse(vote))
+                {
+                    _context.QuestionVotes.Remove(vote_data);
+                }
+                else
+                {
+                    vote_data.Vote = bool.Parse(vote);
+                    _context.QuestionVotes.Update(vote_data);
+                }
+            }
+            else
+            {
+                _context.QuestionVotes.Add(new QuestionVote()
+                {
+                    QuestionId = id,
+                    UserId = UserId,
+                    Vote = bool.Parse(vote)
+                });
+            }
+            _context.SaveChanges();
+
+            int Voute_plus = _context.QuestionVotes.Count(f=>f.QuestionId == id && f.Vote == true);
+            int Voute_Negative = _context.QuestionVotes.Count(f => f.QuestionId == id && f.Vote == false);
+
+            int vote_reult = Voute_plus - Voute_Negative;
+ 
+            return vote_reult;
+        }
+
+        #endregion
+
+        
     }
 }

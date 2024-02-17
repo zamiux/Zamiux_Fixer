@@ -61,6 +61,29 @@ namespace ZamiuxFixer.DataLayer.Migrations
                     b.ToTable("Questions");
                 });
 
+            modelBuilder.Entity("ZamiuxFixer.Domain.Questions.QuestionFavorite", b =>
+                {
+                    b.Property<int>("FavId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("FavId"));
+
+                    b.Property<int>("QuestionId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("FavId");
+
+                    b.HasIndex("QuestionId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("QuestionFavorites");
+                });
+
             modelBuilder.Entity("ZamiuxFixer.Domain.Questions.QuestionTag", b =>
                 {
                     b.Property<int>("TagId")
@@ -82,6 +105,32 @@ namespace ZamiuxFixer.DataLayer.Migrations
                     b.HasIndex("QuestionId");
 
                     b.ToTable("QuestionTags");
+                });
+
+            modelBuilder.Entity("ZamiuxFixer.Domain.Questions.QuestionVote", b =>
+                {
+                    b.Property<int>("VoteId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("VoteId"));
+
+                    b.Property<int>("QuestionId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("Vote")
+                        .HasColumnType("bit");
+
+                    b.HasKey("VoteId");
+
+                    b.HasIndex("QuestionId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("QuestionVotes");
                 });
 
             modelBuilder.Entity("ZamiuxFixer.Domain.Users.Role", b =>
@@ -218,6 +267,25 @@ namespace ZamiuxFixer.DataLayer.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("ZamiuxFixer.Domain.Questions.QuestionFavorite", b =>
+                {
+                    b.HasOne("ZamiuxFixer.Domain.Questions.Question", "Question")
+                        .WithMany("QuestionFavorites")
+                        .HasForeignKey("QuestionId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("ZamiuxFixer.Domain.Users.User", "User")
+                        .WithMany("QuestionFavorites")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Question");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("ZamiuxFixer.Domain.Questions.QuestionTag", b =>
                 {
                     b.HasOne("ZamiuxFixer.Domain.Questions.Question", "Question")
@@ -227,6 +295,25 @@ namespace ZamiuxFixer.DataLayer.Migrations
                         .IsRequired();
 
                     b.Navigation("Question");
+                });
+
+            modelBuilder.Entity("ZamiuxFixer.Domain.Questions.QuestionVote", b =>
+                {
+                    b.HasOne("ZamiuxFixer.Domain.Questions.Question", "Question")
+                        .WithMany("QuestionVotes")
+                        .HasForeignKey("QuestionId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("ZamiuxFixer.Domain.Users.User", "User")
+                        .WithMany("QuestionVotes")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Question");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("ZamiuxFixer.Domain.Users.User", b =>
@@ -261,7 +348,11 @@ namespace ZamiuxFixer.DataLayer.Migrations
 
             modelBuilder.Entity("ZamiuxFixer.Domain.Questions.Question", b =>
                 {
+                    b.Navigation("QuestionFavorites");
+
                     b.Navigation("QuestionTags");
+
+                    b.Navigation("QuestionVotes");
                 });
 
             modelBuilder.Entity("ZamiuxFixer.Domain.Users.Role", b =>
@@ -271,6 +362,10 @@ namespace ZamiuxFixer.DataLayer.Migrations
 
             modelBuilder.Entity("ZamiuxFixer.Domain.Users.User", b =>
                 {
+                    b.Navigation("QuestionFavorites");
+
+                    b.Navigation("QuestionVotes");
+
                     b.Navigation("Questions");
 
                     b.Navigation("UserFollowing1");

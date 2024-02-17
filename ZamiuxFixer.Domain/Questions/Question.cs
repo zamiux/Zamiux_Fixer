@@ -32,6 +32,8 @@ namespace ZamiuxFixer.Domain.Questions
         [ForeignKey("UserId")]
         public User? User { get; set; }
         public List<QuestionTag>? QuestionTags { get; set; }
+        public List<QuestionFavorite>? QuestionFavorites { get; set; }
+        public List<QuestionVote>? QuestionVotes { get; set; }
 
         #endregion
     }

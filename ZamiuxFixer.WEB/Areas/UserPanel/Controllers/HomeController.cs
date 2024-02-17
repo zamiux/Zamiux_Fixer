@@ -16,6 +16,7 @@ namespace ZamiuxFixer.WEB.Areas.UserPanel.Controllers
     public class HomeController : Controller
     {
         public ZamiuxFixerDbContext _context { get; }
+
         #region Ctor
 
         public HomeController(ZamiuxFixerDbContext context)
@@ -26,7 +27,14 @@ namespace ZamiuxFixer.WEB.Areas.UserPanel.Controllers
         #endregion
         public IActionResult Index()
         {
-            return View();
+            int UserId = int.Parse(User.FindFirstValue("UserID"));
+
+            var myQuestion = _context.Questions
+                .Include(q=>q.QuestionFavorites)
+                .Where(x => x.UserId == UserId)
+                .ToList();
+
+            return View(myQuestion);
         }
 
         #region Edit User Profile

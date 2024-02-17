@@ -1,4 +1,6 @@
-﻿
+﻿@model IEnumerable<ZamiuxFixer.Domain.Questions.Question>
+@using ZamiuxFixer.Application.Convertor
+
 @{
     ViewData["Title"] = "داشبورد اصلی";
     Layout = "~/Areas/UserPanel/Views/Shared/_UserPanelLayout.cshtml";
@@ -30,7 +32,19 @@
 <section class="questions-layer layer-style">
     <header><h2> <i>آخرین پرسش و پاسخ های من</i> <span class="answer"><i class="icon-comment"></i> پاسخ </span> <span class="question"><i class="icon-question-mark"></i> پرسش </span> </h2></header>
 
-    <!-- item -->
+    @foreach (var item in Model)
+    {
+        <article class="question">
+            <h3> <a href="/Show-Question/@item.QuestionId">@item.Title</a> <span> @item.CreateDate.ToShamsi() </span> </h3>
+            <div class="detail">
+                <span><i class="icon-eye"></i> @item.QuestionVisit بازدید </span>
+                <span><i class="icon-star"></i> @item.QuestionFavorites?.Count() امتیاز </span>
+                <span><i class="icon-comment"></i> 12 پاسخ </span>
+                <span><i class="icon-user-shape"></i> آخرین پاسخ دهنده : <a href=""> ناشناس </a> </span>
+            </div>
+        </article>
+    }
+   @* <!-- item -->
     <article class="question">
         <h3> <a href=""> نحوه ی پیاده سازی یک فروشگاه اینترنتی با بهترین فریم ورک php </a> <span> 23 دقیقه پیش </span> </h3>
         <div class="detail">
@@ -51,73 +65,8 @@
             <span><i class="icon-user-shape"></i> آخرین پاسخ دهنده : <a href=""> ایمان مدائنی </a> </span>
         </div>
     </article>
-    <!-- item -->
-    <!-- item -->
-    <article class="question">
-        <h3> <a href=""> نحوه ی پیاده سازی یک فروشگاه اینترنتی با بهترین فریم ورک php </a> <span> 23 دقیقه پیش </span> </h3>
-        <div class="detail">
-            <span><i class="icon-eye"></i> 123 بازدید </span>
-            <span><i class="icon-star"></i> 12 امتیاز </span>
-            <span><i class="icon-comment"></i> 12 پاسخ </span>
-            <span><i class="icon-user-shape"></i> آخرین پاسخ دهنده : <a href=""> ایمان مدائنی </a> </span>
-        </div>
-    </article>
-    <!-- item -->
-    <!-- item -->
-    <article class="question">
-        <h3> <a href=""> نحوه ی پیاده سازی یک فروشگاه اینترنتی با بهترین فریم ورک php </a> <span> 23 دقیقه پیش </span> </h3>
-        <div class="detail">
-            <span><i class="icon-eye"></i> 123 بازدید </span>
-            <span><i class="icon-star"></i> 12 امتیاز </span>
-            <span><i class="icon-comment"></i> 12 پاسخ </span>
-            <span><i class="icon-user-shape"></i> آخرین پاسخ دهنده : <a href=""> ایمان مدائنی </a> </span>
-        </div>
-    </article>
-    <!-- item -->
-    <!-- item -->
-    <article class="question">
-        <h3> <a href=""> نحوه ی پیاده سازی یک فروشگاه اینترنتی با بهترین فریم ورک php </a> <span> 23 دقیقه پیش </span> </h3>
-        <div class="detail">
-            <span><i class="icon-eye"></i> 123 بازدید </span>
-            <span><i class="icon-star"></i> 12 امتیاز </span>
-            <span><i class="icon-comment"></i> 12 پاسخ </span>
-            <span><i class="icon-user-shape"></i> آخرین پاسخ دهنده : <a href=""> ایمان مدائنی </a> </span>
-        </div>
-    </article>
-    <!-- item -->
-    <!-- item -->
-    <article class="answer">
-        <h3> <a href=""> نحوه ی پیاده سازی یک فروشگاه اینترنتی با بهترین فریم ورک php </a> <span> 23 دقیقه پیش </span> </h3>
-        <div class="detail">
-            <span><i class="icon-eye"></i> 123 بازدید </span>
-            <span><i class="icon-star"></i> 12 امتیاز </span>
-            <span><i class="icon-comment"></i> 12 پاسخ </span>
-            <span><i class="icon-user-shape"></i> آخرین پاسخ دهنده : <a href=""> ایمان مدائنی </a> </span>
-        </div>
-    </article>
-    <!-- item -->
-    <!-- item -->
-    <article class="answer">
-        <h3> <a href=""> نحوه ی پیاده سازی یک فروشگاه اینترنتی با بهترین فریم ورک php </a> <span> 23 دقیقه پیش </span> </h3>
-        <div class="detail">
-            <span><i class="icon-eye"></i> 123 بازدید </span>
-            <span><i class="icon-star"></i> 12 امتیاز </span>
-            <span><i class="icon-comment"></i> 12 پاسخ </span>
-            <span><i class="icon-user-shape"></i> آخرین پاسخ دهنده : <a href=""> ایمان مدائنی </a> </span>
-        </div>
-    </article>
-    <!-- item -->
-    <!-- item -->
-    <article class="answer">
-        <h3> <a href=""> نحوه ی پیاده سازی یک فروشگاه اینترنتی با بهترین فریم ورک php </a> <span> 23 دقیقه پیش </span> </h3>
-        <div class="detail">
-            <span><i class="icon-eye"></i> 123 بازدید </span>
-            <span><i class="icon-star"></i> 12 امتیاز </span>
-            <span><i class="icon-comment"></i> 12 پاسخ </span>
-            <span><i class="icon-user-shape"></i> آخرین پاسخ دهنده : <a href=""> ایمان مدائنی </a> </span>
-        </div>
-    </article>
-    <!-- item -->
+    <!-- item -->*@
+ 
 
 </section>
 

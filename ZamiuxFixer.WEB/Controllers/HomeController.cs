@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 using System.Security.Claims;
 using ZamiuxFixer.DataLayer.Context;
@@ -20,7 +21,11 @@ namespace ZamiuxFixer.WEB.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var question_list = _Context.Questions
+                .Include(q=>q.User)
+                .Include(q=>q.QuestionTags)
+                .Take(10).ToList();
+            return View(question_list);
         }
 
         public IActionResult Privacy()
