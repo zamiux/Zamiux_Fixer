@@ -1,6 +1,7 @@
 ﻿@model ZamiuxFixer.Domain.Questions.Question
 @using System.Security.Claims
 @using ZamiuxFixer.Application.Convertor
+@using ZamiuxFixer.Domain.Questions
 
 @{
     int UserId = 0;
@@ -11,10 +12,12 @@
         UserId = int.Parse(user_temp);
         if (Model.QuestionFavorites.Any(f => f.UserId == UserId && f.QuestionId == Model.QuestionId))
         {
-            styleFav = "color:#ffb301"; 
+            styleFav = "color:#ffb301";
         }
     }
     Layout = null;
+
+    List<Answer> answers = ViewBag.Answers as List<Answer>;
 }
 
 
@@ -105,7 +108,7 @@
                             <h1><a href="/Show-Question/@Model.QuestionId"> @Model.Title </a></h1>
                             <span> @Model.CreateDate.ToShamsi() </span>
                             <span><i> @Model.QuestionVisit </i> بازدید </span>
-                            <span><i> 5 </i> پاسخ </span>
+                            <span><i> @Model.Answers.Count() </i> پاسخ </span>
                             <span><i id="fav_q"> @Model.QuestionFavorites?.Count() </i> رای </span>
                             <span><i id="vote_q"> 3 </i> امتیاز </span>
 
@@ -142,7 +145,7 @@
                                         <img src="/images/Avatars/@Model.User.Avatar">
                                     </a>
                                     <h3><a href="/ShowProfile/@Model.UserId"> @Model.User.UserName </a></h3>
-                                    <span><i>@Model.User.Questions.Count()</i> پرسش | <i>145</i> پاسخ</span>
+                                    <span><i>@Model.User.Questions.Count()</i> پرسش | <i>@Model.Answers.Count()</i> پاسخ</span>
                                 </div>
                                 <a href="javascript:void(0)"> <i class="icon-back-arrow"></i> ثبت پاسخ به این پرسش </a>
                                 <div class="share-layer">
@@ -188,7 +191,7 @@
                     <!-- answer -->
                     <div class="answers-layer">
                         <div class="top-layer">
-                            <h4><span> 23 </span> پاسخ به این پرسش </h4>
+                            <h4><span> @Model.Answers.Count() </span> پاسخ به این پرسش </h4>
                             <div class="filter-layer">
                                 <form action="" method="">
                                     <div class="select-layer">
@@ -203,165 +206,85 @@
                             </div>
                         </div>
 
-                        <!-- Item -->
-                        <div class="answer-item">
-                            <div class="top-detail">
-                                <span><i> 22 </i> دقیقه پیش </span>
-                                <span><i> 2 </i> پاسخ </span>
-                                <button><i class="icon-pencil-edit"></i></button>
-                            </div>
-                            <div class="inner">
-                                <p>
-                                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد.
-                                </p>
-                                <p>
-                                    کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد.
-                                    کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد.
-                                </p>
-                                <p>
-                                    چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد.
-                                </p>
-                                <div class="rating-layer">
-                                    <form class="scoring-layer" action="" method="">
-                                        <button class="plus"><i class="icon-caret-up"></i></button>
-                                        <span> 12K </span>
-                                        <button class="negative"><i class="icon-caret-down"></i></button>
-                                    </form>
-                                    <form class="selected-answer">
-                                        <button class="selected"><i class="icon-check"></i></button>
-                                    </form>
+                       @if (answers != null)
+                        {
+                            foreach (var item in answers)
+                            {
+                                <!-- Item -->
+                                <div class="answer-item">
+                                    <div class="top-detail">
+                                        <span><i> @item.CreateDate.ToShamsi() </i></span>
+                                        @if (item.UserId == UserId)
+                                        {
+                                            <a asp-action="EditAnswer" asp-controller="Question" asp-route-id="@item.AnswerId"><i class="icon-pencil-edit"></i></a>
+                                        }
+                                    </div>
+                                    <div class="inner">
+                                        <p>
+                                            @item.AnswerText
+                                        </p>
+                                        <div class="rating-layer">
+                                            <form class="scoring-layer" action="" method="">
+                                                <button class="plus"><i class="icon-caret-up"></i></button>
+                                                <span> 12K </span>
+                                                <button class="negative"><i class="icon-caret-down"></i></button>
+                                            </form>
+                                            @if (item.IsTrueAnswer == true || Model.UserId == UserId)
+                                            {
+                                                <form class="selected-answer">
+                                                    <button class="selected" onclick="trueAnswer(@item.QuestionId,@item.AnswerId)"><i class="icon-check"></i></button>
+                                                </form>
+                                            }
+                                            else
+                                            {
+                                                
+                                            }
+                                        </div>
+
+                                    </div>
+
+                                    <div class="detail-layer">
+                                        <div class="author">
+                                            <a href="" class="img-layer">
+                                                <img src="/images/Avatars/@item.User?.Avatar">
+                                            </a>
+                                            <h3><a href=""> @item.User?.UserName </a></h3>
+                                            <span><i>@*@item.User.Questions.Count()*@</i> پرسش | <i>@item.User?.Answers?.Count()</i> پاسخ</span>
+                                        </div>
+                                        <a href="javascript:void(0)"> <i class="icon-back-arrow"></i> ثبت پاسخ </a>
+                                    </div>
+
+                                    <!-- reply -->
+                                    <!-- item -->
+                                    <div class="reply-item">
+                                        <div class="inner">
+                                            <p> به نظر من این تجزیه و تحلیل شما درست نیست ، پیشنهاد میکنم نگاهی به این لینک بندازید : <a href="">http://bugfixer.com/topic/12/A1dsf5</a> <span> 12 مرداد 1397 در 14:28 </span> </p>
+                                            <button><i class="icon-pencil-edit"></i></button>
+                                        </div>
+                                    </div>
+                                    <!-- item -->
+                                    <!-- item -->
+                                    <div class="reply-item">
+                                        <div class="inner">
+                                            <p> مرسی بابت توضیح صریحتون ، به نظر من باید از این تگ کاربردی بهتر استفاده بشه <span> 12 مرداد 1397 در 14:28 </span> </p>
+                                            <button><i class="icon-pencil-edit"></i></button>
+                                        </div>
+                                    </div>
+                                    <!-- item -->
+                                    <!-- item -->
+                                    <div class="reply-item">
+                                        <div class="inner">
+                                            <p> مرسی بابت توضیح صریحتون ، به نظر من باید از این تگ کاربردی بهتر استفاده بشه مرسی بابت توضیح صریحتون ، به نظر من باید از این تگ کاربردی بهتر استفاده بشه مرسی بابت توضیح صریحتون ، به نظر من باید از این تگ کاربردی بهتر استفاده بشه <span> 12 مرداد 1397 در 14:28 </span> </p>
+                                            <button><i class="icon-pencil-edit"></i></button>
+                                        </div>
+                                    </div>
+                                    <!-- item -->
+                                    <!-- /reply -->
+
                                 </div>
-
-                            </div>
-
-                            <div class="detail-layer">
-                                <div class="author">
-                                    <a href="" class="img-layer">
-                                        <img src="/images/pic/avatar.jpg">
-                                    </a>
-                                    <h3><a href=""> ایمان مدائنی </a></h3>
-                                    <span><i>123</i> پرسش | <i>145</i> پاسخ</span>
-                                </div>
-                                <a href="javascript:void(0)"> <i class="icon-back-arrow"></i> ثبت پاسخ </a>
-                            </div>
-
-                            <!-- reply -->
-                            <!-- item -->
-                            <div class="reply-item">
-                                <div class="inner">
-                                    <p> به نظر من این تجزیه و تحلیل شما درست نیست ، پیشنهاد میکنم نگاهی به این لینک بندازید : <a href="">http://bugfixer.com/topic/12/A1dsf5</a> <span> 12 مرداد 1397 در 14:28 </span> </p>
-                                    <button><i class="icon-pencil-edit"></i></button>
-                                </div>
-                            </div>
-                            <!-- item -->
-                            <!-- item -->
-                            <div class="reply-item">
-                                <div class="inner">
-                                    <p> مرسی بابت توضیح صریحتون ، به نظر من باید از این تگ کاربردی بهتر استفاده بشه <span> 12 مرداد 1397 در 14:28 </span> </p>
-                                    <button><i class="icon-pencil-edit"></i></button>
-                                </div>
-                            </div>
-                            <!-- item -->
-                            <!-- item -->
-                            <div class="reply-item">
-                                <div class="inner">
-                                    <p> مرسی بابت توضیح صریحتون ، به نظر من باید از این تگ کاربردی بهتر استفاده بشه مرسی بابت توضیح صریحتون ، به نظر من باید از این تگ کاربردی بهتر استفاده بشه مرسی بابت توضیح صریحتون ، به نظر من باید از این تگ کاربردی بهتر استفاده بشه <span> 12 مرداد 1397 در 14:28 </span> </p>
-                                    <button><i class="icon-pencil-edit"></i></button>
-                                </div>
-                            </div>
-                            <!-- item -->
-                            <!-- /reply -->
-
-                        </div>
-                        <!-- /Item -->
-                        <!-- Item -->
-                        <div class="answer-item">
-                            <div class="top-detail">
-                                <span><i> 22 </i> دقیقه پیش </span>
-                                <span><i> 2 </i> پاسخ </span>
-                                <button><i class="icon-pencil-edit"></i></button>
-                            </div>
-                            <div class="inner">
-                                <p>
-                                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد.
-                                </p>
-                                <p>
-                                    کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد.
-                                    کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد.
-                                </p>
-                                <p>
-                                    چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد.
-                                </p>
-                                <div class="rating-layer">
-                                    <form class="scoring-layer" action="" method="">
-                                        <button class="plus"><i class="icon-caret-up"></i></button>
-                                        <span> 12K </span>
-                                        <button class="negative"><i class="icon-caret-down"></i></button>
-                                    </form>
-                                    <form class="selected-answer">
-                                        <button><i class="icon-check"></i></button>
-                                    </form>
-                                </div>
-
-                            </div>
-
-                            <div class="detail-layer">
-                                <div class="author">
-                                    <a href="" class="img-layer">
-                                        <img src="/images/pic/avatar.jpg">
-                                    </a>
-                                    <h3><a href=""> ایمان مدائنی </a></h3>
-                                    <span><i>123</i> پرسش | <i>145</i> پاسخ</span>
-                                </div>
-                                <a href="javascript:void(0)"> <i class="icon-back-arrow"></i> ثبت پاسخ </a>
-                            </div>
-
-                        </div>
-                        <!-- /Item -->
-                        <!-- Item -->
-                        <div class="answer-item">
-                            <div class="top-detail">
-                                <span><i> 22 </i> دقیقه پیش </span>
-                                <span><i> 2 </i> پاسخ </span>
-                                <button><i class="icon-pencil-edit"></i></button>
-                            </div>
-                            <div class="inner">
-                                <p>
-                                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد.
-                                </p>
-                                <p>
-                                    کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد.
-                                    کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد.
-                                </p>
-                                <p>
-                                    چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد.
-                                </p>
-                                <div class="rating-layer">
-                                    <form class="scoring-layer" action="" method="">
-                                        <button class="plus"><i class="icon-caret-up"></i></button>
-                                        <span id="vote_span"> 0 </span>
-                                        <button class="negative"><i class="icon-caret-down"></i></button>
-                                    </form>
-                                    <form class="selected-answer">
-                                        <button><i class="icon-check"></i></button>
-                                    </form>
-                                </div>
-
-                            </div>
-
-                            <div class="detail-layer">
-                                <div class="author">
-                                    <a href="" class="img-layer">
-                                        <img src="/images/pic/avatar.jpg">
-                                    </a>
-                                    <h3><a href=""> ایمان مدائنی </a></h3>
-                                    <span><i>123</i> پرسش | <i>145</i> پاسخ</span>
-                                </div>
-                                <a href="javascript:void(0)"> <i class="icon-back-arrow"></i> ثبت پاسخ </a>
-                            </div>
-
-                        </div>
-                        <!-- /Item -->
+                                <!-- /Item -->
+                            }
+                        }
                         <!-- pagination -->
                         <div class="pagination-items">
                             <div class="inner">
@@ -380,10 +303,20 @@
                         <!-- submit comment -->
                         <div class="submit-comment" id="submit-comment">
                             <p> متن پاسخ شما </p>
-                            <form action="" method="">
-                                <textarea placeholder=" متن خود را وارد نمایید "></textarea>
-                                <button> ارسال پاسخ </button>
-                            </form>
+                            @if (User.Identity.IsAuthenticated == true)
+                            {
+                                <form asp-controller="Question" asp-action="AddAnswer" method="post">
+                                    <input type="hidden" name="questionId" value="@Model." />
+                                    <textarea name="answer" placeholder=" متن خود را وارد نمایید "></textarea>
+                                    <button type="submit"> ارسال پاسخ </button>
+                                </form>
+                            }
+                            else
+                            {
+                                <div class="alert alert-warning">
+                                    <p>برای درج پاسخ ابتدا باید لاگین کنید</p>
+                                </div>
+                            }
                         </div>
                         <!-- /submit comment -->
 
@@ -416,41 +349,7 @@
                     <!-- most popular post -->
                     <section class="most-popular-questions">
 
-                        <article>
-                            <header><h2> پر امتیازترین پرسش های یک ماه اخیر </h2></header>
-                            <ul>
-                                <li>
-                                    <span> 10K <i class="icon-star"></i></span>
-                                    <h2><a href=""> معرفی بهترین و ساده ترین فریم ورک php برای پیاده سازی فروشگاه اینترنتی </a></h2>
-                                </li>
-                                <li>
-                                    <span> 3K <i class="icon-star"></i></span>
-                                    <h2><a href=""> معرفی بهترین و ساده ترین فریم ورک php برای پیاده سازی فروشگاه اینترنتی </a></h2>
-                                </li>
-                                <li>
-                                    <span> 6K <i class="icon-star"></i></span>
-                                    <h2><a href=""> معرفی بهترین و ساده ترین فریم ورک php برای پیاده سازی فروشگاه اینترنتی </a></h2>
-                                </li>
-                            </ul>
-                        </article>
-
-                        <article>
-                            <header><h2> پر بحث ترین پرسش های یک ماه اخیر </h2></header>
-                            <ul>
-                                <li>
-                                    <span> 8.5K <i class="icon-comment"></i></span>
-                                    <h2><a href=""> معرفی بهترین و ساده ترین فریم ورک php برای پیاده سازی فروشگاه اینترنتی </a></h2>
-                                </li>
-                                <li>
-                                    <span> 7K <i class="icon-comment"></i></span>
-                                    <h2><a href=""> معرفی بهترین و ساده ترین فریم ورک php برای پیاده سازی فروشگاه اینترنتی </a></h2>
-                                </li>
-                                <li>
-                                    <span> 11K <i class="icon-comment"></i></span>
-                                    <h2><a href=""> معرفی بهترین و ساده ترین فریم ورک php برای پیاده سازی فروشگاه اینترنتی </a></h2>
-                                </li>
-                            </ul>
-                        </article>
+                       @await Component.InvokeAsync("SideBarQuestion")
 
                     </section>
                     <!-- /most popular post -->
@@ -510,22 +409,26 @@
     <script src="/js/public.js"></script>
     <script src="/js/question.js"></script>
     <script>
-        function AddToFav(id) 
-        {
+        function AddToFav(id) {
             //url: /Question/AddToFav/1
 
-            $.get("/Question/AddToFav/"+id,function(res){
+            $.get("/Question/AddToFav/" + id, function (res) {
                 $("#fav_q").html(res);
                 $("#span_fav").html(res);
                 //$(".icon-star").attr("style","color:#ffb301");
             });
         }
 
-        function Vote(id,vote)
-        {
-            $.get("/Question/AddVote/" + id+"?vote="+vote, function (res) {
+        function Vote(id, vote) {
+            $.get("/Question/AddVote/" + id + "?vote=" + vote, function (res) {
                 $("#vote_q").html(res);
                 $("#vote_span").html(res);
+            });
+        }
+
+        function trueAnswer(qid, aid) {
+            $.get("/Question/AddTrueAnswer/?questionId=" + qid + "&AnswerId=" + aid, function (res) {
+                location.reload();
             });
         }
     </script>

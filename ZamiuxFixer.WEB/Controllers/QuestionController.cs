@@ -86,6 +86,7 @@ namespace ZamiuxFixer.WEB.Controllers
                 .Include(q => q.QuestionTags)
                 .Include(q => q.QuestionVotes)
                 .Include(q => q.QuestionFavorites)
+                .Include(q => q.Answers)
                 .FirstOrDefault(q => q.QuestionId == id);
 
             if (question == null)
@@ -97,7 +98,14 @@ namespace ZamiuxFixer.WEB.Controllers
             question.QuestionVisit += 1;
 
             _context.Questions.Add(question);
-            // _context.SaveChanges();
+            _context.SaveChanges();
+
+            ViewBag.Answers = _context.Answers
+                .Include(a => a.User)
+                .ThenInclude(a=>a.Answers)
+                .ThenInclude(a => a.Question)
+                .Where(a => a.QuestionId == id)
+                .ToList();
 
             return View(question);
         }
@@ -258,6 +266,109 @@ namespace ZamiuxFixer.WEB.Controllers
 
         #endregion
 
-        
+        #region AddAnswer
+        [Authorize]
+        [HttpPost]
+        public IActionResult AddAnswer(int questionId,string asnwer)
+        {
+            if (string.IsNullOrEmpty(asnwer))
+            {
+                return Redirect("/Show-Question/" + questionId);
+            }
+
+            //current user
+            int UserId = int.Parse(User.FindFirstValue("UserId"));
+
+            Answer answer_data = new Answer() { 
+                CreateDate = DateTime.Now,
+                QuestionId = questionId,
+                IsDelete = false,
+                IsTrueAnswer = false,
+                UserId = UserId,
+                AnswerText = asnwer
+            };
+
+            _context.Answers.Add(answer_data);
+            _context.SaveChanges();
+
+            return Redirect("/Show-Question/" + questionId);
+        }
+        #endregion
+
+        #region Add True Answer
+        [Authorize]
+        public bool AddTrueAnswer(int questionId,int AnswerId)
+        {
+            //current user
+            int UserId = int.Parse(User.FindFirstValue("UserId"));
+
+            //if check question is exist va male hamin user jarie
+            if (_context.Questions.Any(q=>q.QuestionId == questionId && q.UserId == UserId))
+            {
+                var answer_data = _context.Answers
+                    .Where(a => a.QuestionId == questionId)
+                    .ToList();
+
+                foreach (var answer in answer_data)
+                {
+                    answer.IsTrueAnswer = false;
+                    _context.Answers.Update(answer);
+                }
+
+                var trueanswer = answer_data.SingleOrDefault(a => a.AnswerId == AnswerId);
+                trueanswer.IsTrueAnswer = true;
+
+                _context.Answers.Update(trueanswer);
+                _context.SaveChanges();
+
+                return true;
+            }
+            return false;
+        }
+        #endregion
+
+        #region Edit Answer
+        [Authorize]
+        [HttpGet]
+        public IActionResult EditAnswer(int id)
+        {
+            //current user
+            int UserId = int.Parse(User.FindFirstValue("UserId"));
+
+            var answer_data = _context.Answers
+                .Include(s=>s.Question)
+                .FirstOrDefault(s=>s.AnswerId == id && s.UserId == UserId);
+            if (answer_data == null)
+            {
+                return BadRequest();
+            }
+
+            return View(answer_data);
+        }
+
+        [Authorize]
+        [HttpPost]
+        public IActionResult EditAnswer(Answer answer)
+        {
+            //current user
+            int UserId = int.Parse(User.FindFirstValue("UserId"));
+
+            var answer_data = _context.Answers
+                .FirstOrDefault(s => s.AnswerId == answer.AnswerId && s.UserId == UserId);
+            if (answer_data == null)
+            {
+                return BadRequest();
+            }
+
+            answer_data.AnswerText = answer.AnswerText;
+            answer_data.ModifiedDate = DateTime.Now;
+
+            _context.Update(answer_data);
+            _context.SaveChanges();
+
+            return Redirect($"/ShowQuestion/{answer_data.QuestionId}");
+        }
+
+        #endregion
     }
 }

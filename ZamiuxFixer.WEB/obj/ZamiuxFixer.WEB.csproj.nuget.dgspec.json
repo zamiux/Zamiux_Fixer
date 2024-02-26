@@ -32,7 +32,11 @@
         "frameworks": {
           "net7.0": {
             "targetAlias": "net7.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.Domain\\ZamiuxFixer.Domain.csproj": {
+                "projectPath": "D:\\Projects\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer\\ZamiuxFixer.Domain\\ZamiuxFixer.Domain.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

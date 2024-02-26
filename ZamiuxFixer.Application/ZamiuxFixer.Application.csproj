@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ZamiuxFixer.Domain\ZamiuxFixer.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

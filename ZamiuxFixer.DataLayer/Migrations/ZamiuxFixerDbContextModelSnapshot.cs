@@ -22,6 +22,45 @@ namespace ZamiuxFixer.DataLayer.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("ZamiuxFixer.Domain.Questions.Answer", b =>
+                {
+                    b.Property<int>("AnswerId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AnswerId"));
+
+                    b.Property<string>("AnswerText")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsDelete")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsTrueAnswer")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("ModifiedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("QuestionId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("AnswerId");
+
+                    b.HasIndex("QuestionId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Answers");
+                });
+
             modelBuilder.Entity("ZamiuxFixer.Domain.Questions.Question", b =>
                 {
                     b.Property<int>("QuestionId")
@@ -256,6 +295,25 @@ namespace ZamiuxFixer.DataLayer.Migrations
                     b.ToTable("UserFollowings");
                 });
 
+            modelBuilder.Entity("ZamiuxFixer.Domain.Questions.Answer", b =>
+                {
+                    b.HasOne("ZamiuxFixer.Domain.Questions.Question", "Question")
+                        .WithMany("Answers")
+                        .HasForeignKey("QuestionId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("ZamiuxFixer.Domain.Users.User", "User")
+                        .WithMany("Answers")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Question");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("ZamiuxFixer.Domain.Questions.Question", b =>
                 {
                     b.HasOne("ZamiuxFixer.Domain.Users.User", "User")
@@ -348,6 +406,8 @@ namespace ZamiuxFixer.DataLayer.Migrations
 
             modelBuilder.Entity("ZamiuxFixer.Domain.Questions.Question", b =>
                 {
+                    b.Navigation("Answers");
+
                     b.Navigation("QuestionFavorites");
 
                     b.Navigation("QuestionTags");
@@ -362,6 +422,8 @@ namespace ZamiuxFixer.DataLayer.Migrations
 
             modelBuilder.Entity("ZamiuxFixer.Domain.Users.User", b =>
                 {
+                    b.Navigation("Answers");
+
                     b.Navigation("QuestionFavorites");
 
                     b.Navigation("QuestionVotes");

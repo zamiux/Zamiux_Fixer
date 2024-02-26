@@ -54,6 +54,7 @@ namespace ZamiuxFixer.Domain.Users
         public List<Question> Questions { get; set; }
         public List<QuestionFavorite>? QuestionFavorites { get; set; }
         public List<QuestionVote>? QuestionVotes { get; set; }
+        public List<Answer>? Answers { get; set; }
         #endregion
 
     }

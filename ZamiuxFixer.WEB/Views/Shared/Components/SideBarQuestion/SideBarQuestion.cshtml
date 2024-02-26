@@ -1,0 +1,29 @@
+﻿@model ZamiuxFixer.Application.ViewModels.Question.QuestionsVM
+
+<article>
+    <header><h2> پر امتیازترین پرسش های یک ماه اخیر </h2></header>
+    <ul>
+        @foreach (var item in Model.TypeRateQuestions)
+        {
+            <li>
+                <span> 10K <i class="icon-star"></i></span>
+                <h2><a href="/Show-Question/@item.QuestionId"> @item.Title </a></h2>
+            </li>
+        }
+       
+    </ul>
+</article>
+
+<article>
+    <header><h2> پر بحث ترین پرسش های یک ماه اخیر </h2></header>
+    <ul>
+        @foreach (var item in Model.TypeAnswerQuestions)
+        {
+            <li>
+                <span> 10K <i class="icon-comment"></i></span>
+                <h2><a href="/Show-Question/@item.QuestionId"> @item.Title </a></h2>
+            </li>
+        }
+        
+    </ul>
+</article>

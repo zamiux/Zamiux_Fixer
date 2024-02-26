@@ -10,3 +10,6 @@ D:\Projects\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer.Application\obj\Debu
 D:\Projects\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer.Application\obj\Debug\net7.0\refint\ZamiuxFixer.Application.dll
 D:\Projects\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer.Application\obj\Debug\net7.0\ZamiuxFixer.Application.pdb
 D:\Projects\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer.Application\obj\Debug\net7.0\ref\ZamiuxFixer.Application.dll
+D:\Projects\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer.Application\bin\Debug\net7.0\ZamiuxFixer.Domain.dll
+D:\Projects\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer.Application\bin\Debug\net7.0\ZamiuxFixer.Domain.pdb
+D:\Projects\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer.Application\obj\Debug\net7.0\ZamiuxFixer.Application.csproj.CopyComplete

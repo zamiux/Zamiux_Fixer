@@ -34,6 +34,7 @@ namespace ZamiuxFixer.Domain.Questions
         public List<QuestionTag>? QuestionTags { get; set; }
         public List<QuestionFavorite>? QuestionFavorites { get; set; }
         public List<QuestionVote>? QuestionVotes { get; set; }
+        public List<Answer>? Answers { get; set; }
 
         #endregion
     }

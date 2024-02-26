@@ -36,6 +36,7 @@ namespace ZamiuxFixer.DataLayer.Context
         public DbSet<QuestionTag> QuestionTags { get; set; }
         public DbSet<QuestionFavorite> QuestionFavorites { get; set; }
         public DbSet<QuestionVote> QuestionVotes { get; set; }
+        public DbSet<Answer> Answers { get; set; }
         #endregion
 
         #region Database Connection 

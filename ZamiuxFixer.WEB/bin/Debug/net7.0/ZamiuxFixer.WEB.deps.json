@@ -2500,6 +2500,9 @@
         }
       },
       "ZamiuxFixer.Application/1.0.0": {
+        "dependencies": {
+          "ZamiuxFixer.Domain": "1.0.0"
+        },
         "runtime": {
           "ZamiuxFixer.Application.dll": {}
         }
