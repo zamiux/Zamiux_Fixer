@@ -16,6 +16,14 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\Projects\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer.WEB
 build_property._RazorSourceGeneratorDebug = 
 
+[D:/Projects/ZamiuxFixer/ZamiuxFixer/ZamiuxFixer/ZamiuxFixer.WEB/Areas/Admin/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Projects/ZamiuxFixer/ZamiuxFixer/ZamiuxFixer/ZamiuxFixer.WEB/Areas/Admin/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Projects/ZamiuxFixer/ZamiuxFixer/ZamiuxFixer/ZamiuxFixer.WEB/Areas/UserPanel/Views/Home/ChangePassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVXNlclBhbmVsXFZpZXdzXEhvbWVcQ2hhbmdlUGFzc3dvcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -104,6 +112,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVlc3Rpb25cU2hvd1F1ZXN0aW9uLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Projects/ZamiuxFixer/ZamiuxFixer/ZamiuxFixer/ZamiuxFixer.WEB/Views/Question/ShowQuestionByTag.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVlc3Rpb25cU2hvd1F1ZXN0aW9uQnlUYWcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Projects/ZamiuxFixer/ZamiuxFixer/ZamiuxFixer/ZamiuxFixer.WEB/Views/Shared/Components/ShowTags/ShowTags.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcU2hvd1RhZ3NcU2hvd1RhZ3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Projects/ZamiuxFixer/ZamiuxFixer/ZamiuxFixer/ZamiuxFixer.WEB/Views/Shared/Components/SideBarQuestion/SideBarQuestion.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcU2lkZUJhclF1ZXN0aW9uXFNpZGVCYXJRdWVzdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -134,6 +150,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/Projects/ZamiuxFixer/ZamiuxFixer/ZamiuxFixer/ZamiuxFixer.WEB/Views/Shared/_Nav.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9OYXYuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Projects/ZamiuxFixer/ZamiuxFixer/ZamiuxFixer/ZamiuxFixer.WEB/Views/Shared/_QuestionBox.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9RdWVzdGlvbkJveC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Projects/ZamiuxFixer/ZamiuxFixer/ZamiuxFixer/ZamiuxFixer.WEB/Views/Shared/_ValidationScriptsPartial.cshtml]

@@ -5,6 +5,7 @@ using ZamiuxFixer.DataLayer;
 using ZamiuxFixer.DataLayer.Context;
 using ZamiuxFixer.DataLayer.Contract;
 using ZamiuxFixer.DataLayer.Repositories;
+using ZamiuxFixer.IOC;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,9 +20,11 @@ builder.Services.AddDbContext<ZamiuxFixerDbContext>(options =>
 #endregion
 
 #region Add Service Repository From Data Layer
-builder.Services.AddScoped<IRoleRepository, RoleRepository>();
-builder.Services.AddScoped<IUserRepository, UserRepository>();
-builder.Services.AddScoped<IMailSender, SendEmail>();
+//builder.Services.AddScoped<IRoleRepository, RoleRepository>();
+//builder.Services.AddScoped<IUserRepository, UserRepository>();
+//builder.Services.AddScoped<IMailSender, SendEmail>();
+builder.Services.RegisterServices();
+
 #endregion
 
 #region Authentication Type : Cookie Browser
@@ -67,6 +70,13 @@ app.UseAuthorization();
 app.UseEndpoints(endpoints =>
 {
     #region User Panel Area
+    endpoints.MapControllerRoute(
+      name: "areas",
+      pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
+    );
+    #endregion
+
+    #region Admin Area
     endpoints.MapControllerRoute(
       name: "areas",
       pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"

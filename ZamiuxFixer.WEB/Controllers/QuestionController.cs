@@ -80,7 +80,7 @@ namespace ZamiuxFixer.WEB.Controllers
         [Route("Show-Question/{id}")]
 
         public IActionResult ShowQuestion(int id)
-        {
+        { 
             var question = _context.Questions
                 .Include(q => q.User)
                 .Include(q => q.QuestionTags)
@@ -91,7 +91,7 @@ namespace ZamiuxFixer.WEB.Controllers
 
             if (question == null)
             {
-                return NotFound(); 
+                return NotFound();
             }
 
             //afzaye tedad bazdid
@@ -102,7 +102,7 @@ namespace ZamiuxFixer.WEB.Controllers
 
             ViewBag.Answers = _context.Answers
                 .Include(a => a.User)
-                .ThenInclude(a=>a.Answers)
+                .ThenInclude(a => a.Answers)
                 .ThenInclude(a => a.Question)
                 .Where(a => a.QuestionId == id)
                 .ToList();
@@ -134,7 +134,7 @@ namespace ZamiuxFixer.WEB.Controllers
         [Authorize]
         [HttpPost]
         [Route("Edit-Question/{id}")]
-        public IActionResult EditQuestion(Question questionModel,string Tags)
+        public IActionResult EditQuestion(Question questionModel, string Tags)
         {
             int UserId = int.Parse(User.FindFirstValue("UserId"));
 
@@ -151,7 +151,7 @@ namespace ZamiuxFixer.WEB.Controllers
 
             _context.Questions.Update(editquestion);
 
-            var tags = _context.Questions.Where(t=>t.QuestionId == questionModel.QuestionId).ToList();   
+            var tags = _context.Questions.Where(t => t.QuestionId == questionModel.QuestionId).ToList();
 
             // remove old tags
             foreach (var tag in tags)
@@ -203,14 +203,14 @@ namespace ZamiuxFixer.WEB.Controllers
             int UserId = int.Parse(User.FindFirstValue("UserId"));
 
             var fav = _context.QuestionFavorites
-                .FirstOrDefault(f => f.UserId == UserId  && f.QuestionId == id);
+                .FirstOrDefault(f => f.UserId == UserId && f.QuestionId == id);
 
-            if(fav == null)
+            if (fav == null)
             {
-                _context.QuestionFavorites.Add(new QuestionFavorite() { 
+                _context.QuestionFavorites.Add(new QuestionFavorite() {
                     QuestionId = id,
                     UserId = UserId
-                }); 
+                });
             }
             else
             {
@@ -218,14 +218,14 @@ namespace ZamiuxFixer.WEB.Controllers
             }
             _context.SaveChanges();
 
-            return _context.QuestionFavorites.Count(f=>f.QuestionId == id);
+            return _context.QuestionFavorites.Count(f => f.QuestionId == id);
         }
         #endregion
 
         #region Add Vote
 
         [Authorize]
-        public int AddVote(int id,string vote)
+        public int AddVote(int id, string vote)
         {
             //current user
             int UserId = int.Parse(User.FindFirstValue("UserId"));
@@ -233,7 +233,7 @@ namespace ZamiuxFixer.WEB.Controllers
             var vote_data = _context.QuestionVotes
                 .FirstOrDefault(f => f.UserId == UserId && f.QuestionId == id);
 
-            if(vote_data != null)
+            if (vote_data != null)
             {
                 if (vote_data.Vote == bool.Parse(vote))
                 {
@@ -256,11 +256,11 @@ namespace ZamiuxFixer.WEB.Controllers
             }
             _context.SaveChanges();
 
-            int Voute_plus = _context.QuestionVotes.Count(f=>f.QuestionId == id && f.Vote == true);
+            int Voute_plus = _context.QuestionVotes.Count(f => f.QuestionId == id && f.Vote == true);
             int Voute_Negative = _context.QuestionVotes.Count(f => f.QuestionId == id && f.Vote == false);
 
             int vote_reult = Voute_plus - Voute_Negative;
- 
+
             return vote_reult;
         }
 
@@ -269,7 +269,7 @@ namespace ZamiuxFixer.WEB.Controllers
         #region AddAnswer
         [Authorize]
         [HttpPost]
-        public IActionResult AddAnswer(int questionId,string asnwer)
+        public IActionResult AddAnswer(int questionId, string asnwer)
         {
             if (string.IsNullOrEmpty(asnwer))
             {
@@ -279,7 +279,7 @@ namespace ZamiuxFixer.WEB.Controllers
             //current user
             int UserId = int.Parse(User.FindFirstValue("UserId"));
 
-            Answer answer_data = new Answer() { 
+            Answer answer_data = new Answer() {
                 CreateDate = DateTime.Now,
                 QuestionId = questionId,
                 IsDelete = false,
@@ -297,13 +297,13 @@ namespace ZamiuxFixer.WEB.Controllers
 
         #region Add True Answer
         [Authorize]
-        public bool AddTrueAnswer(int questionId,int AnswerId)
+        public bool AddTrueAnswer(int questionId, int AnswerId)
         {
             //current user
             int UserId = int.Parse(User.FindFirstValue("UserId"));
 
             //if check question is exist va male hamin user jarie
-            if (_context.Questions.Any(q=>q.QuestionId == questionId && q.UserId == UserId))
+            if (_context.Questions.Any(q => q.QuestionId == questionId && q.UserId == UserId))
             {
                 var answer_data = _context.Answers
                     .Where(a => a.QuestionId == questionId)
@@ -336,8 +336,8 @@ namespace ZamiuxFixer.WEB.Controllers
             int UserId = int.Parse(User.FindFirstValue("UserId"));
 
             var answer_data = _context.Answers
-                .Include(s=>s.Question)
-                .FirstOrDefault(s=>s.AnswerId == id && s.UserId == UserId);
+                .Include(s => s.Question)
+                .FirstOrDefault(s => s.AnswerId == id && s.UserId == UserId);
             if (answer_data == null)
             {
                 return BadRequest();
@@ -369,6 +369,28 @@ namespace ZamiuxFixer.WEB.Controllers
             return Redirect($"/ShowQuestion/{answer_data.QuestionId}");
         }
 
+        #endregion
+
+        #region Tag
+        [Route("ShowTag/{q}")]
+        [Route("Search")]
+        public IActionResult ShowQuestionByTag(string q)
+        {
+            string param = q.Replace("-"," ").Trim();
+
+            var res = _context.QuestionTags
+                .Include(s => s.Question)
+                .ThenInclude(s => s.User)
+                .Include(s => s.Question).ThenInclude(s=>s.QuestionTags)
+                .Include(s => s.Question).ThenInclude(s => s.Answers)
+                .Where(s => s.Tag == param || s.Tag.Contains(param)
+                || s.Question.Title.Contains(param))
+                .Select(s=>s.Question)
+                .Distinct()
+                .ToList();
+
+            return View(res);
+        }
         #endregion
     }
 }

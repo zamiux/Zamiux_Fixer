@@ -1,0 +1,11 @@
+﻿@model IEnumerable<string>
+
+<section class="most-controversial-tags">
+    <header><h2> پر بحث ترین تگ ها </h2></header>
+    <div class="tags-layer">
+        @foreach (var item in Model)
+        {
+            <a href="/ShowTag/@item"> @item </a>
+        } 
+    </div>
+</section>

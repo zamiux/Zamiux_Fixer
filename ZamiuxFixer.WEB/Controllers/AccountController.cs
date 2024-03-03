@@ -19,17 +19,20 @@ namespace ZamiuxFixer.WEB.Controllers
         private readonly IConfiguration _configuration;
         private readonly IMailSender _mail;
         private readonly ZamiuxFixerDbContext _context;
+        private readonly ILogger<AccountController> _logger;
 
         #region Constructor
         public AccountController(IUserRepository userRepository,
             IConfiguration configuration,
             IMailSender mail,
-            ZamiuxFixerDbContext context)
+            ZamiuxFixerDbContext context,
+            ILogger<AccountController> logger)
         {
             _userRepository = userRepository;
             _configuration = configuration;
             _mail = mail;
             _context = context;
+            _logger = logger;
         }
         #endregion
 
@@ -90,6 +93,7 @@ namespace ZamiuxFixer.WEB.Controllers
 
             ViewBag.SuccessRegister = true;
             //return View("SuccessRegister",user_data);
+            SendSms(user_data.Mobile, "Thnak you for Register");
             return View(register);
         }
         #endregion
@@ -232,6 +236,31 @@ namespace ZamiuxFixer.WEB.Controllers
             _context.SaveChanges();
 
             return Redirect($"/Profile/{id}");
+        }
+        #endregion
+
+        #region SMS
+        private bool SendSms(string mobile, string text)
+        {
+            try
+            {
+                Kavenegar.KavenegarApi api = new Kavenegar.KavenegarApi("7A35614C6E5176697577574D36615832476F4D5734386E7A3136736D71554F796166655A6B6A504A484F343D");
+                var result = api.Send("10008663", mobile, text);
+                return true;
+            }
+            catch (Kavenegar.Exceptions.ApiException ex)
+            {
+                // در صورتی که خروجی وب سرویس 200 نباشد این خطارخ می دهد.
+                _logger.LogError("اس ام اس ارسال نشد");
+                return false;
+            }
+            catch (Kavenegar.Exceptions.HttpException ex)
+            {
+                _logger.LogError("اس ام اس ارسال نشد");
+                // در زمانی که مشکلی در برقرای ارتباط با وب سرویس وجود داشته باشد این خطا رخ می دهد
+                return false;
+            }
+
         }
         #endregion
     }

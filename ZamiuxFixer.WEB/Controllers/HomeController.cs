@@ -21,6 +21,21 @@ namespace ZamiuxFixer.WEB.Controllers
 
         public IActionResult Index()
         {
+
+            //List<ShowQuestionViewModel> res =
+            //    context.Questions.Select(q => new ShowQuestionViewModel
+            //    {
+            //        AnswerCount = context.Answers.Count(a => a.QuestionId == q.QuestionId),
+            //        FavCount = context.QuestionFavorites.Count(a => a.QuestionId == q.QuestionId),
+            //        LastUserAnswer = context.Answers.OrderByDescending(a => a.CreateDate).Include(a => a.User).Where(a => a.QuestionId == q.QuestionId)
+            //        .Select(a => a.User).FirstOrDefault(),
+            //        Question = q,
+            //        Tags = context.QuestionTags.Where(t => t.QuestionId == q.QuestionId).
+            //        Select(s => s.Tag).ToList(),
+            //        UserName = context.Users.First(u => u.UserId == q.UserId).UserName,
+            //        VoteCount = context.QuestionVotes.Count(a => a.QuestionId == q.QuestionId),
+            //    }).Take(10).ToList();
+
             var question_list = _Context.Questions
                 .Include(q=>q.User)
                 .Include(q=>q.QuestionTags)
@@ -87,6 +102,31 @@ namespace ZamiuxFixer.WEB.Controllers
             ViewBag.Take = take;
 
             return View(result);
+        }
+        #endregion
+
+        #region SMS
+        private bool SendSms(string mobile, string text)
+        {
+            try
+            {
+                Kavenegar.KavenegarApi api = new Kavenegar.KavenegarApi("7A35614C6E5176697577574D36615832476F4D5734386E7A3136736D71554F796166655A6B6A504A484F343D");
+                var result = api.Send("10008663", mobile, text);
+                return true;
+            }
+            catch (Kavenegar.Exceptions.ApiException ex)
+            {
+                // در صورتی که خروجی وب سرویس 200 نباشد این خطارخ می دهد.
+                _logger.LogError("اس ام اس ارسال نشد");
+                return false; 
+            }
+            catch (Kavenegar.Exceptions.HttpException ex)
+            {
+                _logger.LogError("اس ام اس ارسال نشد");
+                // در زمانی که مشکلی در برقرای ارتباط با وب سرویس وجود داشته باشد این خطا رخ می دهد
+                return false;
+            }
+
         }
         #endregion
     }

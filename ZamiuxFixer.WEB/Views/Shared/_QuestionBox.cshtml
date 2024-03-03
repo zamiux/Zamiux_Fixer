@@ -1,0 +1,26 @@
+﻿@model ZamiuxFixer.Domain.Questions.Question 
+@using ZamiuxFixer.Application.Convertor
+
+<!-- Model -->
+<article>
+    <h2><a href="/Show-Question/@Model.QuestionId">@Model.Title</a></h2>
+    <span> @Model.Answers.Count() <i class="icon-comment-1"></i> </span>
+    <ul> 
+        <li> پرسیده شده توسط  <a href=""> @Model.User.UserName </a> در @Model.CreateDate.ToShamsi() </li>
+        <li> بدون پاسخ </li>
+    </ul>
+    <div class="detail">
+        <div class="tags-layer">
+            @foreach (var tag in Model.QuestionTags)
+            {
+                <a href="/ShowTag/@tag.Tag"> @tag.Tag </a>
+            }
+
+        </div>
+        <div class="left-side">
+            <span> 3 <i class="icon-star"></i> </span>
+            <span> @Model.QuestionVisit <i class="icon-eye"></i> </span>
+        </div>
+    </div>
+</article>
+<!-- /Model -->

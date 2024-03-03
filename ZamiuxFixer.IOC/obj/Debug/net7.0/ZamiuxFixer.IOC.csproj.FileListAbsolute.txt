@@ -10,3 +10,10 @@ D:\Projects\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer.IOC\obj\Debug\net7.0
 D:\Projects\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer.IOC\obj\Debug\net7.0\refint\ZamiuxFixer.IOC.dll
 D:\Projects\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer.IOC\obj\Debug\net7.0\ZamiuxFixer.IOC.pdb
 D:\Projects\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer.IOC\obj\Debug\net7.0\ref\ZamiuxFixer.IOC.dll
+D:\Projects\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer.IOC\bin\Debug\net7.0\ZamiuxFixer.Application.dll
+D:\Projects\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer.IOC\bin\Debug\net7.0\ZamiuxFixer.DataLayer.dll
+D:\Projects\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer.IOC\bin\Debug\net7.0\ZamiuxFixer.Domain.dll
+D:\Projects\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer.IOC\bin\Debug\net7.0\ZamiuxFixer.Application.pdb
+D:\Projects\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer.IOC\bin\Debug\net7.0\ZamiuxFixer.DataLayer.pdb
+D:\Projects\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer.IOC\bin\Debug\net7.0\ZamiuxFixer.Domain.pdb
+D:\Projects\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer\ZamiuxFixer.IOC\obj\Debug\net7.0\ZamiuxFixer.IOC.csproj.CopyComplete
