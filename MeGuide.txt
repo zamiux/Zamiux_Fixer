@@ -27,7 +27,6 @@ install packages in ZamiuxFixer.Web:
 6- Microsoft.EntityFrameworkCore.Abstractions 7.0
 7- Microsoft.EntityFrameworkCore.Analyzers 7.0
 8- Microsoft.EntityFrameworkCore.Relational 7.0
-9- Microsoft.VisualStudio.Web.CodeGeneration.Design 7.0
 10- Include ZamiuxFixer.Application
 11- Include ZamiuxFixer.DataLayer
 12- Include ZamiuxFixer.Domain
